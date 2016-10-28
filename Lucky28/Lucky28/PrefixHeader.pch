@@ -1,0 +1,42 @@
+//
+//  PrefixHeader.pch
+//  Lucky28
+//
+//  Created by hyj-pc on 16/10/24.
+//  Copyright © 2016年 Jiuwang. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+#import "HomeViewController.h"
+#import "ListViewController.h"
+#import "GameCenterViewController.h"
+#import "ExpiryViewController.h"
+#import "MyViewController.h"
+#import "UIView+JWExtension.h"
+#import "MJExtension.h"
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+/*** 日志 ***/
+#ifdef DEBUG
+#define JWLog(...) NSLog(__VA_ARGS__)
+#else
+#define JWLog(...)
+#endif
+
+#define JWLogFunc JWLog(@"%s", __func__);
+
+/*** 颜色 ***/
+#define JWColorA(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)];
+#define JWColor(r, g, b) JWColorA((r), (g), (b), 255)
+#define JWRandomColor JWColor(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255))
+
+#define JWTitleColor [UIColor colorWithRed:(227/255.0) green:165/255.0 blue:67/255.0 alpha:1]
+#define JWTabBarBackgroundColor [UIColor colorWithRed:(51/255.0) green:51/255.0 blue:51/255.0 alpha:1]
+#endif
+#endif /* PrefixHeader_pch */
