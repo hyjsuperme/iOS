@@ -11,16 +11,11 @@
 @interface GameCenterTableViewCell ()
 /*城市图片*/
 @property (nonatomic, strong) NSArray *cityImageArray;
-//@property (nonatomic, assign) NSInteger time;
+
 @end
 
 @implementation GameCenterTableViewCell
-- (NSArray *)cityImageArray{
-    if (!_cityImageArray) {
-        _cityImageArray =[NSArray arrayWithObjects:@"CityGame1",@"CityGame2",@"CityGame3",@"CityGame4",@"CityGam5",@"CityGame6",@"CityGame7",@"CityGame8",@"CityGame9", nil];
-    }
-    return _cityImageArray;
-}
+
 
 +(instancetype)cellWithTableView:(UITableView *)tableView{
     static NSString *ID =@"ID1";
@@ -30,18 +25,36 @@
     }
     return cell;
 }
-
+- (void)setHome:(JWHome *)home{
+    _home =home;
+    //左右游戏类型
+//    self.LeftCityName.text =_home.game_type;
+//    self.RightCityName.text =_home.game_type;
+//    //游戏期号
+//    self.LeftStage.text =_home.game_sn;
+//    self.RightStage.text =_home.game_sn;
+//    //开奖时间
+//    NSTimeInterval interval = [[NSDate date] timeIntervalSince1970] * 1000;
+//    NSInteger timeEnd =[_home.opened_at  integerValue];
+//    
+//    self.LeftTime.text =[NSString stringWithFormat:@"%f",timeEnd -interval];
+//    self.RightTime.text =[NSString stringWithFormat:@"%f",timeEnd -interval];
+//    //奖池
+//    self.LeftAwardMoney.text =_home.bet_amount;
+//    self.LeftAwardMoney.text =_home.bet_amount;
+    
+}
+//左边按钮点击
+- (IBAction)LeftBtnClick:(UIButton *)sender {
+    
+}
+//右边按钮点击
+- (IBAction)RightBtnClick:(UIButton *)sender {
+    
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    for (int i=0; i < 9; i++) {
-        if (i%2 == 0) {
-            self.LeftImage.image =[UIImage imageNamed:self.cityImageArray[i]];
-        } else{
-            self.RightImage.image =[UIImage imageNamed:self.cityImageArray[i]];
-        }
-        
-    }
    
 }
 

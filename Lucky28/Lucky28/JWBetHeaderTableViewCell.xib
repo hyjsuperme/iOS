@@ -1,19 +1,68 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="JWBetHeaderTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="693" id="KGk-i7-Jjw" customClass="JWBetHeaderTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="43"/>
+                <frame key="frameInset" width="375" height="66"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投注模式：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2z-Fh-8D7">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="99" id="mEd-1A-cvw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="0.39996373653411865" green="0.40002402663230896" blue="0.3999447226524353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ja4-lR-EOK">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="PdF-vv-KU1"/>
+                            <constraint firstAttribute="height" constant="48" id="miV-U6-oyg"/>
+                        </constraints>
+                        <state key="normal" title="我的模式" backgroundImage="BetBox">
+                            <color key="titleColor" red="0.64700299501419067" green="0.64709591865539551" blue="0.64697366952896118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WM-S8-C6i">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="VZ9-db-y6Z"/>
+                            <constraint firstAttribute="height" constant="48" id="WVE-8C-h0I"/>
+                        </constraints>
+                        <state key="normal" title="默认模式" backgroundImage="BetBox">
+                            <color key="titleColor" red="0.64700299501419067" green="0.64709591865539551" blue="0.64697366952896118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="E2z-Fh-8D7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="0FJ-Ce-bIi"/>
+                    <constraint firstItem="ja4-lR-EOK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="BQN-dg-K2s"/>
+                    <constraint firstAttribute="bottom" secondItem="E2z-Fh-8D7" secondAttribute="bottom" constant="4" id="Bxg-hO-jrk"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="8WM-S8-C6i" secondAttribute="bottom" constant="1" id="CA8-xa-dOE"/>
+                    <constraint firstItem="E2z-Fh-8D7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="MbJ-Rs-ar8"/>
+                    <constraint firstItem="ja4-lR-EOK" firstAttribute="leading" secondItem="8WM-S8-C6i" secondAttribute="trailing" constant="29" id="imf-NB-S4q"/>
+                    <constraint firstItem="8WM-S8-C6i" firstAttribute="leading" secondItem="E2z-Fh-8D7" secondAttribute="trailing" constant="8" id="td8-A0-D8Z"/>
+                    <constraint firstItem="8WM-S8-C6i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="yE3-j3-dTn"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="DefaultBtn" destination="8WM-S8-C6i" id="MI2-kC-D6l"/>
+                <outlet property="MyView" destination="ja4-lR-EOK" id="Tm0-wu-rBw"/>
+            </connections>
+            <point key="canvasLocation" x="538.5" y="365.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="BetBox" width="80" height="48"/>
+    </resources>
 </document>

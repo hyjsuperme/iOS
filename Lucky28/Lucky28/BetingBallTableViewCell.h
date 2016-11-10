@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface BetingBallTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *topColor;
+
+@property (weak, nonatomic) IBOutlet UIButton *NumberBtn;
++(instancetype)cellWithTableView:(UITableView *)tableView;
 
 @end

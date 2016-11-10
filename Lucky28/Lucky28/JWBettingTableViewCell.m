@@ -8,17 +8,65 @@
 
 #import "JWBettingTableViewCell.h"
 
+@interface JWBettingTableViewCell ()
+@property (nonatomic, strong) UIButton *selectBtn;
+
+@end
+
+
 @implementation JWBettingTableViewCell
+
+- (void)setBetArray:(NSArray *)betArray{
+    _betArray =betArray;
+   
+    NSInteger Tag;
+    if (betArray.count >= 1) {
+        for (int i = 0; i < betArray.count; i++) {
+            Tag =([betArray[i] integerValue]+1) *100;
+            UIButton *button =[self viewWithTag:Tag];
+            [button setBackgroundImage:[UIImage imageNamed:@"Number_back"] forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            button.selected =YES;
+        }
+    }
+ 
+   
+}
+
++(instancetype)cellWithTableView:(UITableView *)tableView{
+    static NSString *ID =@"ID";
+    JWBettingTableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:ID];
+    if (!cell) {
+        cell =[[[NSBundle mainBundle]loadNibNamed:@"JWBettingTableViewCell" owner:nil options:nil]firstObject];
+    }
+    return cell;
+}
+- (IBAction)Click:(UIButton *)sender {
+
+     sender.selected =!sender.selected;
+    if (sender.selected) {
+        NSNotificationCenter *center =[NSNotificationCenter defaultCenter];
+        [center postNotificationName:@"ButtonNameAdd" object:self userInfo:@{@"ButtonName":sender.currentTitle}];
+        [sender setBackgroundImage:[UIImage imageNamed:@"Number_back"] forState:UIControlStateNormal];
+        [sender setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    } else {
+        NSNotificationCenter *center =[NSNotificationCenter defaultCenter];
+        [center postNotificationName:@"ButtonNameRemove" object:self userInfo:@{@"ButtonName":sender.currentTitle}];
+        [sender setBackgroundImage:[UIImage imageNamed:@"WhiteBall"] forState:UIControlStateNormal];
+        [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    }
+
+  
+    
+    
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
     // Initialization code
+   
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
 
 @end

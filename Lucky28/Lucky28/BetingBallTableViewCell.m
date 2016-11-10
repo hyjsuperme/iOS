@@ -15,10 +15,15 @@
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
++(instancetype)cellWithTableView:(UITableView *)tableView{
+    static NSString *ID =@"ID2";
+    BetingBallTableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:ID];
+    if (!cell) {
+        cell =[[[NSBundle mainBundle]loadNibNamed:@"BetingBallTableViewCell" owner:nil options:nil]firstObject];
+    }
+    return cell;
 }
+
 
 @end

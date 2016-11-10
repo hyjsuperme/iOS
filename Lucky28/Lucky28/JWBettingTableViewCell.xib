@@ -1,19 +1,746 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="JWBettingTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="449" id="KGk-i7-Jjw" customClass="JWBettingTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="449"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="43"/>
+                <frame key="frameInset" width="375" height="448"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6Q-YQ-LE1">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="pEK-yd-mVM"/>
+                            <constraint firstAttribute="width" constant="44" id="zn3-el-V4q"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="0" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mWg-VX-UVZ"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLx-o0-8an">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="pYi-30-xbX"/>
+                            <constraint firstAttribute="width" constant="44" id="q3T-EQ-jEv"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="1" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cxC-Dm-t90"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsF-bc-Oly">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="FQF-N7-7mP"/>
+                            <constraint firstAttribute="width" constant="44" id="bPf-fZ-AsK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="2" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7s4-lJ-2z7"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="400" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCt-ma-Cmp">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="JD2-e2-ZZ1"/>
+                            <constraint firstAttribute="width" constant="44" id="r7R-Jz-h2C"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="3" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ipU-YV-356"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="500" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zd1-7u-Jyf">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="7MI-Cx-9hN"/>
+                            <constraint firstAttribute="height" constant="44" id="MzK-hw-OUD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="4" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NEE-si-g6f"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="600" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Tw-9U-xQt">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="Fje-qH-lha"/>
+                            <constraint firstAttribute="height" constant="44" id="ZGe-ph-95H"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="5" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rA7-wK-z7j"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="700" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8p-QL-SVj">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="I9R-ZB-c2q"/>
+                            <constraint firstAttribute="height" constant="44" id="ej6-ve-JmM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="6" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pTA-ZS-PmF"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="800" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lJ-sF-uQf">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="AkW-wr-tjY"/>
+                            <constraint firstAttribute="width" constant="44" id="ftM-ff-rHb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="7" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="efS-1O-1YS"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="900" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUE-O5-DXy">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="sWN-4j-czf"/>
+                            <constraint firstAttribute="height" constant="44" id="wAy-jX-UG9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="8" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="V0H-9P-hIM"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMp-qS-4hL">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="VIy-Ee-CC7"/>
+                            <constraint firstAttribute="height" constant="44" id="rO7-FI-zDk"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="9" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SZO-lR-udV"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSz-MQ-wxr">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="6zX-mL-blS"/>
+                            <constraint firstAttribute="width" constant="44" id="U2f-Cb-Zsi"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="10" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="S3J-9A-AOD"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVQ-jr-OxE">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="EV3-Fl-Sts"/>
+                            <constraint firstAttribute="width" constant="44" id="WRS-er-iAX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="11" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Fy4-5V-ueK"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmZ-1C-MyB">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="FWN-RN-CPs"/>
+                            <constraint firstAttribute="width" constant="44" id="Jl5-GM-BtM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="12" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vRd-JV-Rdc"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1400" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJD-TE-YnQ">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="94V-Do-qzk"/>
+                            <constraint firstAttribute="width" constant="44" id="mQt-vD-4iv"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="13" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="L24-SD-QM4"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1500" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1e-tL-LvU">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="6YV-Es-6Qj"/>
+                            <constraint firstAttribute="width" constant="44" id="phJ-8h-kHr"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="14" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ym3-Sf-jOt"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1600" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIv-Dg-XYs">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="Hxe-El-bl2"/>
+                            <constraint firstAttribute="width" constant="44" id="WTP-Jx-Rms"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="15" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xjg-5h-sxy"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1700" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkt-gp-2rt">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="2HZ-gK-ibQ"/>
+                            <constraint firstAttribute="width" constant="44" id="79B-Ng-2uh"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="16" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Nd8-m9-rRH"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1800" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72a-r8-9eq">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="1FH-dq-0qK"/>
+                            <constraint firstAttribute="width" constant="44" id="3M7-5j-BAF"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="17" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Cz9-7r-461"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1900" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1r-Wl-T6X">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="3Mz-4Q-4z4"/>
+                            <constraint firstAttribute="width" constant="44" id="CNe-LF-G33"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="18" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Mdl-dV-auZ"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="2000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjH-J2-bqo">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="0gW-PL-GYq"/>
+                            <constraint firstAttribute="height" constant="44" id="3IZ-WD-vXZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="19" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HA9-Vb-WtF"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="2100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VoD-GK-l0y">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="4Kl-Iw-Uvn"/>
+                            <constraint firstAttribute="height" constant="44" id="Orb-5h-Vs9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="20" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fiS-8d-scT"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="2200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0h-fV-M3T">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="Fo5-EO-8BP"/>
+                            <constraint firstAttribute="height" constant="44" id="ofN-KY-RTK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="21" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Yz4-Hf-cXw"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="2300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqy-Jt-Ngg">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="lU8-aq-gAx"/>
+                            <constraint firstAttribute="height" constant="44" id="zf9-pH-smC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="22" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9sH-dB-UvO"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="2400" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ybv-xy-Xzn">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="WcJ-bJ-rKV"/>
+                            <constraint firstAttribute="width" constant="44" id="pft-zt-0le"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="23" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="f6u-7o-yxP"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="2500" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3u-fg-2h7">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="Ruh-KV-rJp"/>
+                            <constraint firstAttribute="height" constant="44" id="nRY-Po-czE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="24" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pPM-K8-5nQ"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="2600" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qz5-0g-71d">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="8MA-VN-zde"/>
+                            <constraint firstAttribute="height" constant="44" id="lXm-FD-ycn"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="25" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bFM-fw-RqU"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="2700" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Q4-Wy-Vu4">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="253-8D-Jn6"/>
+                            <constraint firstAttribute="height" constant="44" id="as5-Ok-CMj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <state key="normal" title="26" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="578-Th-VDP"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="2800" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ql7-Z4-r3n">
+                        <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="Yik-XT-nwS"/>
+                            <constraint firstAttribute="height" constant="44" id="Ynz-pl-XL0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <state key="normal" title="27" backgroundImage="WhiteBall">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="Click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="VvZ-Nn-hHp"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikB-4P-6pi">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsW-TJ-hLJ">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sB-DT-8T3">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xb1-Lh-9SU">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRQ-kc-K0Y">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRj-gi-YQk">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ko2-6j-7dt">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIP-ed-bNB">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HI-dy-QW7">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b26-oL-mNq">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YR2-6w-BAY">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNi-iG-Pgc">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JpY-2R-t3s">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzn-af-08V">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2c-4M-1eh">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdj-xq-nUm">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyn-P6-0o6">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qd-ye-cLa">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzg-Kb-H8K">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjJ-lw-8HA">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXX-2M-NVL">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hv-dQ-39V">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5D-5c-YsO">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQ5-xa-mhY">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DpX-6g-6dz">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="赔率1.98" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdw-1c-bkO">
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.6509242057800293" green="0.65101766586303711" blue="0.65089476108551025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTt-yq-aQI">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="G1k-kI-IsK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.9293333888053894" green="0.92946380376815796" blue="0.92929238080978394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ra-z6-DyS">
+                        <color key="backgroundColor" red="0.77114838361740112" green="0.77127915620803833" blue="0.77113121747970581" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="pld-oc-HaN"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="ql7-Z4-r3n" firstAttribute="top" secondItem="sdw-1c-bkO" secondAttribute="bottom" constant="8" id="05Q-go-OMG"/>
+                    <constraint firstItem="z0h-fV-M3T" firstAttribute="top" secondItem="vdj-xq-nUm" secondAttribute="bottom" constant="8" id="2Tf-kZ-kms"/>
+                    <constraint firstItem="0lJ-sF-uQf" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="2iA-5n-sZq"/>
+                    <constraint firstItem="JsW-TJ-hLJ" firstAttribute="top" secondItem="xLx-o0-8an" secondAttribute="bottom" constant="8" id="2u6-LX-aBv"/>
+                    <constraint firstItem="z1r-Wl-T6X" firstAttribute="top" secondItem="hzn-af-08V" secondAttribute="bottom" constant="8" id="2wd-AT-0jZ"/>
+                    <constraint firstItem="xLx-o0-8an" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="3LR-Ak-fGb"/>
+                    <constraint firstItem="FJD-TE-YnQ" firstAttribute="top" secondItem="0HI-dy-QW7" secondAttribute="bottom" constant="8" id="3zF-lu-4XJ"/>
+                    <constraint firstItem="uCt-ma-Cmp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="51k-eg-U75"/>
+                    <constraint firstItem="vdj-xq-nUm" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.625" id="52e-nm-9Te"/>
+                    <constraint firstItem="jNi-iG-Pgc" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.625" id="5QI-h3-P8q"/>
+                    <constraint firstItem="2qd-ye-cLa" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.375" id="5U9-xP-vZn"/>
+                    <constraint firstItem="HIP-ed-bNB" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="61X-pt-Ndc"/>
+                    <constraint firstItem="cmZ-1C-MyB" firstAttribute="top" secondItem="HIP-ed-bNB" secondAttribute="bottom" constant="8" id="6bz-Ja-gXM"/>
+                    <constraint firstItem="z3u-fg-2h7" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.75" id="7fj-Ip-gW5"/>
+                    <constraint firstAttribute="trailing" secondItem="6ra-z6-DyS" secondAttribute="trailing" id="8ws-Hn-UbS"/>
+                    <constraint firstItem="Vzg-Kb-H8K" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.75" id="9GW-lL-GG8"/>
+                    <constraint firstItem="HRQ-kc-K0Y" firstAttribute="top" secondItem="Zd1-7u-Jyf" secondAttribute="bottom" constant="8" id="9c8-VY-k1c"/>
+                    <constraint firstItem="xb1-Lh-9SU" firstAttribute="top" secondItem="uCt-ma-Cmp" secondAttribute="bottom" constant="8" id="9hP-nZ-SD6"/>
+                    <constraint firstItem="FTt-yq-aQI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="E0U-X9-mG2"/>
+                    <constraint firstItem="dkt-gp-2rt" firstAttribute="top" secondItem="jNi-iG-Pgc" secondAttribute="bottom" constant="8" id="E2N-Vm-igv"/>
+                    <constraint firstItem="eIv-Dg-XYs" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.25" id="E8t-zh-Ftg"/>
+                    <constraint firstItem="0HI-dy-QW7" firstAttribute="top" secondItem="uUE-O5-DXy" secondAttribute="bottom" constant="8" id="ElV-Pe-kDX"/>
+                    <constraint firstItem="0sB-DT-8T3" firstAttribute="top" secondItem="fsF-bc-Oly" secondAttribute="bottom" constant="8" id="FbP-pD-VJ6"/>
+                    <constraint firstItem="FQ5-xa-mhY" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.625" id="Fze-Gk-Wmo"/>
+                    <constraint firstItem="z3u-fg-2h7" firstAttribute="top" secondItem="Vzg-Kb-H8K" secondAttribute="bottom" constant="8" id="GEh-oL-pdF"/>
+                    <constraint firstItem="DpX-6g-6dz" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.75" id="Gcp-3I-ucD"/>
+                    <constraint firstItem="h6Q-YQ-LE1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="Gve-Xe-lCe"/>
+                    <constraint firstItem="YR2-6w-BAY" firstAttribute="top" secondItem="vSz-MQ-wxr" secondAttribute="bottom" constant="8" id="HSQ-B8-V0M"/>
+                    <constraint firstItem="uCt-ma-Cmp" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.375" id="HlH-PJ-LHn"/>
+                    <constraint firstItem="6ra-z6-DyS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="IAZ-np-frD"/>
+                    <constraint firstItem="dkt-gp-2rt" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.625" id="IHY-FQ-upn"/>
+                    <constraint firstItem="JpY-2R-t3s" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="IUm-il-JKv"/>
+                    <constraint firstItem="b26-oL-mNq" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.75" id="J67-PA-3Pb"/>
+                    <constraint firstItem="z1r-Wl-T6X" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.375" id="Jo2-tm-BYZ"/>
+                    <constraint firstItem="cmZ-1C-MyB" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Jyp-fg-Ari"/>
+                    <constraint firstItem="Zd1-7u-Jyf" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.75" id="KCt-t1-Mpp"/>
+                    <constraint firstItem="fjJ-lw-8HA" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.25" id="KRB-cQ-qBV"/>
+                    <constraint firstItem="P1e-tL-LvU" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.75" id="KWF-JJ-IN8"/>
+                    <constraint firstItem="wyn-P6-0o6" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Kt3-1S-VAi"/>
+                    <constraint firstItem="1hv-dQ-39V" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.625" id="LF6-Sm-us6"/>
+                    <constraint firstItem="uUE-O5-DXy" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.375" id="LFT-0a-6UE"/>
+                    <constraint firstItem="vqy-Jt-Ngg" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="LJD-3f-cwr"/>
+                    <constraint firstItem="Qz5-0g-71d" firstAttribute="top" secondItem="fjJ-lw-8HA" secondAttribute="bottom" constant="8" id="MxB-pc-hbc"/>
+                    <constraint firstItem="dkt-gp-2rt" firstAttribute="top" secondItem="jNi-iG-Pgc" secondAttribute="bottom" constant="8" id="N5E-y0-5n5"/>
+                    <constraint firstItem="fjJ-lw-8HA" firstAttribute="top" secondItem="VoD-GK-l0y" secondAttribute="bottom" constant="8" id="NDm-N1-76S"/>
+                    <constraint firstItem="72a-r8-9eq" firstAttribute="top" secondItem="JpY-2R-t3s" secondAttribute="bottom" constant="8" id="NYq-k8-jyZ"/>
+                    <constraint firstItem="Zd1-7u-Jyf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="OFm-Bm-eZN"/>
+                    <constraint firstItem="z0h-fV-M3T" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.625" id="OxM-V8-K2e"/>
+                    <constraint firstItem="FQ5-xa-mhY" firstAttribute="top" secondItem="z0h-fV-M3T" secondAttribute="bottom" constant="8" id="PhY-DI-vB6"/>
+                    <constraint firstItem="Ko2-6j-7dt" firstAttribute="top" secondItem="e8p-QL-SVj" secondAttribute="bottom" constant="8" id="Qjq-5Z-37A"/>
+                    <constraint firstItem="Ybv-xy-Xzn" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.375" id="ROi-KX-ylh"/>
+                    <constraint firstItem="Qz5-0g-71d" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.25" id="Rgb-ZK-4c9"/>
+                    <constraint firstItem="2qd-ye-cLa" firstAttribute="top" secondItem="z1r-Wl-T6X" secondAttribute="bottom" constant="8" id="RmF-dy-l3b"/>
+                    <constraint firstItem="h6Q-YQ-LE1" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.25" id="RmM-9M-cRt"/>
+                    <constraint firstItem="ikB-4P-6pi" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.25" id="S2s-1T-RKT"/>
+                    <constraint firstItem="JpY-2R-t3s" firstAttribute="top" secondItem="cmZ-1C-MyB" secondAttribute="bottom" constant="8" id="T6c-dW-H84"/>
+                    <constraint firstItem="sdw-1c-bkO" firstAttribute="top" secondItem="vqy-Jt-Ngg" secondAttribute="bottom" constant="8" id="TDa-p3-KXR"/>
+                    <constraint firstItem="vqy-Jt-Ngg" firstAttribute="top" secondItem="wyn-P6-0o6" secondAttribute="bottom" constant="8" id="Tz5-S0-wnb"/>
+                    <constraint firstItem="8Q4-Wy-Vu4" firstAttribute="top" secondItem="FQ5-xa-mhY" secondAttribute="bottom" constant="8" id="URG-Hx-fWf"/>
+                    <constraint firstItem="wyn-P6-0o6" firstAttribute="top" secondItem="72a-r8-9eq" secondAttribute="bottom" constant="8" id="VD4-Ow-sj5"/>
+                    <constraint firstItem="FJD-TE-YnQ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.375" id="VXS-VZ-Rgb"/>
+                    <constraint firstAttribute="trailing" secondItem="FTt-yq-aQI" secondAttribute="trailing" id="VgF-1i-50v"/>
+                    <constraint firstItem="72a-r8-9eq" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="WW8-ax-lpf"/>
+                    <constraint firstItem="P1e-tL-LvU" firstAttribute="top" secondItem="b26-oL-mNq" secondAttribute="bottom" constant="8" id="WfZ-lh-mzE"/>
+                    <constraint firstItem="hzn-af-08V" firstAttribute="top" secondItem="FJD-TE-YnQ" secondAttribute="bottom" constant="8" id="Wrm-qb-KSF"/>
+                    <constraint firstItem="vSz-MQ-wxr" firstAttribute="top" secondItem="qRj-gi-YQk" secondAttribute="bottom" constant="8" id="Wwd-O9-Xxn"/>
+                    <constraint firstItem="Vzg-Kb-H8K" firstAttribute="top" secondItem="zjH-J2-bqo" secondAttribute="bottom" constant="8" id="XBw-hK-ndC"/>
+                    <constraint firstItem="xb1-Lh-9SU" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.375" id="Xcd-Hd-foP"/>
+                    <constraint firstItem="fsF-bc-Oly" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="YSe-ZS-McJ"/>
+                    <constraint firstItem="VXX-2M-NVL" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.25" id="YVk-w8-MHR"/>
+                    <constraint firstItem="xVQ-jr-OxE" firstAttribute="top" secondItem="Ko2-6j-7dt" secondAttribute="bottom" constant="8" id="Yzf-nS-awC"/>
+                    <constraint firstItem="6ra-z6-DyS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Z2w-q1-47z"/>
+                    <constraint firstItem="sdw-1c-bkO" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="a0C-Go-x4x"/>
+                    <constraint firstItem="zjH-J2-bqo" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.75" id="aIR-Oj-3Vj"/>
+                    <constraint firstItem="e8p-QL-SVj" firstAttribute="top" secondItem="JsW-TJ-hLJ" secondAttribute="bottom" constant="8" id="aeh-IT-hfz"/>
+                    <constraint firstItem="qRj-gi-YQk" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.25" id="ajb-Da-QXB"/>
+                    <constraint firstItem="AMp-qS-4hL" firstAttribute="top" secondItem="HRQ-kc-K0Y" secondAttribute="bottom" constant="8" id="b2Y-4e-SAb"/>
+                    <constraint firstItem="h5D-5c-YsO" firstAttribute="top" secondItem="ql7-Z4-r3n" secondAttribute="bottom" constant="8" id="bBv-nO-PgN"/>
+                    <constraint firstItem="G2c-4M-1eh" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.25" id="cgD-NP-IYt"/>
+                    <constraint firstItem="xLx-o0-8an" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.625" id="d9k-Vw-Mfc"/>
+                    <constraint firstItem="AMp-qS-4hL" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.75" id="eT0-Zl-6eF"/>
+                    <constraint firstItem="8Q4-Wy-Vu4" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.625" id="f43-3F-drU"/>
+                    <constraint firstItem="HIP-ed-bNB" firstAttribute="top" secondItem="0lJ-sF-uQf" secondAttribute="bottom" constant="8" id="fgC-1N-iWR"/>
+                    <constraint firstItem="HRQ-kc-K0Y" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.75" id="gKc-ms-dGE"/>
+                    <constraint firstItem="e8p-QL-SVj" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.625" id="gL7-dQ-kOm"/>
+                    <constraint firstItem="zjH-J2-bqo" firstAttribute="top" secondItem="DpX-6g-6dz" secondAttribute="bottom" constant="8" id="gPa-qd-jIJ"/>
+                    <constraint firstItem="jNi-iG-Pgc" firstAttribute="top" secondItem="xVQ-jr-OxE" secondAttribute="bottom" constant="8" id="gRd-Lp-fb5"/>
+                    <constraint firstItem="xVQ-jr-OxE" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.625" id="gf4-T3-q2I"/>
+                    <constraint firstItem="FJD-TE-YnQ" firstAttribute="top" secondItem="0HI-dy-QW7" secondAttribute="bottom" constant="8" id="gfc-cc-pwy"/>
+                    <constraint firstItem="0sB-DT-8T3" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="j0U-Ib-6xu"/>
+                    <constraint firstItem="VoD-GK-l0y" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.25" id="kQm-8o-yd6"/>
+                    <constraint firstItem="uUE-O5-DXy" firstAttribute="top" secondItem="xb1-Lh-9SU" secondAttribute="bottom" constant="8" id="kVf-xp-e5s"/>
+                    <constraint firstItem="0HI-dy-QW7" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.375" id="keB-i2-H1h"/>
+                    <constraint firstItem="YR2-6w-BAY" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.25" id="kj7-yR-LAD"/>
+                    <constraint firstItem="hzn-af-08V" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.375" id="lch-Le-4mS"/>
+                    <constraint firstItem="JsW-TJ-hLJ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.625" id="luh-UV-6sA"/>
+                    <constraint firstItem="1hv-dQ-39V" firstAttribute="top" secondItem="8Q4-Wy-Vu4" secondAttribute="bottom" constant="8" id="o0n-sq-Q0W"/>
+                    <constraint firstItem="b26-oL-mNq" firstAttribute="top" secondItem="AMp-qS-4hL" secondAttribute="bottom" constant="8" id="o4P-AF-Xdg"/>
+                    <constraint firstItem="7Tw-9U-xQt" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.25" id="oPB-yK-e6t"/>
+                    <constraint firstItem="G2c-4M-1eh" firstAttribute="top" secondItem="eIv-Dg-XYs" secondAttribute="bottom" constant="8" id="oW9-UT-rO9"/>
+                    <constraint firstItem="cmZ-1C-MyB" firstAttribute="top" secondItem="HIP-ed-bNB" secondAttribute="bottom" constant="8" id="pJg-uu-dtu"/>
+                    <constraint firstItem="7Tw-9U-xQt" firstAttribute="top" secondItem="ikB-4P-6pi" secondAttribute="bottom" constant="8" id="plL-2Q-4N8"/>
+                    <constraint firstItem="fsF-bc-Oly" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="qR3-nT-bkn"/>
+                    <constraint firstItem="qRj-gi-YQk" firstAttribute="top" secondItem="7Tw-9U-xQt" secondAttribute="bottom" constant="8" id="qX2-3F-yeg"/>
+                    <constraint firstItem="0lJ-sF-uQf" firstAttribute="top" secondItem="0sB-DT-8T3" secondAttribute="bottom" constant="8" id="s2g-ea-GXl"/>
+                    <constraint firstItem="FTt-yq-aQI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="szM-8n-FUd"/>
+                    <constraint firstItem="DpX-6g-6dz" firstAttribute="top" secondItem="P1e-tL-LvU" secondAttribute="bottom" constant="8" id="tCZ-55-Gft"/>
+                    <constraint firstItem="Ybv-xy-Xzn" firstAttribute="top" secondItem="2qd-ye-cLa" secondAttribute="bottom" constant="8" id="tL0-kL-OKY"/>
+                    <constraint firstItem="Ko2-6j-7dt" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.625" id="tLq-jg-adH"/>
+                    <constraint firstItem="VXX-2M-NVL" firstAttribute="top" secondItem="Qz5-0g-71d" secondAttribute="bottom" constant="8" id="v4o-ka-xaG"/>
+                    <constraint firstItem="vSz-MQ-wxr" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.25" id="vKy-Qb-i9l"/>
+                    <constraint firstItem="ikB-4P-6pi" firstAttribute="top" secondItem="h6Q-YQ-LE1" secondAttribute="bottom" constant="8" id="vx1-Fq-CzO"/>
+                    <constraint firstItem="ql7-Z4-r3n" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="wcI-ft-RaS"/>
+                    <constraint firstItem="h5D-5c-YsO" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="wm3-xi-56A"/>
+                    <constraint firstItem="vdj-xq-nUm" firstAttribute="top" secondItem="dkt-gp-2rt" secondAttribute="bottom" constant="8" id="yFn-Ur-xH4"/>
+                    <constraint firstItem="VoD-GK-l0y" firstAttribute="top" secondItem="G2c-4M-1eh" secondAttribute="bottom" constant="8" id="yy4-40-8KW"/>
+                    <constraint firstItem="eIv-Dg-XYs" firstAttribute="top" secondItem="YR2-6w-BAY" secondAttribute="bottom" constant="8" id="zkP-Kj-yu4"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="Bet1" destination="h6Q-YQ-LE1" id="Q5U-wj-Mu1"/>
+                <outlet property="Bet10" destination="AMp-qS-4hL" id="Xea-yr-fel"/>
+                <outlet property="Bet11" destination="vSz-MQ-wxr" id="HCm-Wp-Wgu"/>
+                <outlet property="Bet12" destination="xVQ-jr-OxE" id="HYG-WI-XJe"/>
+                <outlet property="Bet13" destination="cmZ-1C-MyB" id="cwS-Bl-KlI"/>
+                <outlet property="Bet14" destination="FJD-TE-YnQ" id="72w-wj-SiK"/>
+                <outlet property="Bet15" destination="P1e-tL-LvU" id="qj8-Er-oTJ"/>
+                <outlet property="Bet16" destination="eIv-Dg-XYs" id="HIC-y2-Q0W"/>
+                <outlet property="Bet17" destination="dkt-gp-2rt" id="vq3-E8-WRJ"/>
+                <outlet property="Bet18" destination="72a-r8-9eq" id="Da1-0J-MyW"/>
+                <outlet property="Bet19" destination="z1r-Wl-T6X" id="1ef-aK-m4W"/>
+                <outlet property="Bet2" destination="xLx-o0-8an" id="dIi-MH-8rP"/>
+                <outlet property="Bet20" destination="zjH-J2-bqo" id="XZ8-Fx-48o"/>
+                <outlet property="Bet21" destination="VoD-GK-l0y" id="7VD-iv-uzc"/>
+                <outlet property="Bet22" destination="z0h-fV-M3T" id="uLm-BF-bze"/>
+                <outlet property="Bet23" destination="vqy-Jt-Ngg" id="4HB-XP-kq2"/>
+                <outlet property="Bet24" destination="Ybv-xy-Xzn" id="PeX-7F-kNG"/>
+                <outlet property="Bet25" destination="z3u-fg-2h7" id="tWC-Id-1ou"/>
+                <outlet property="Bet26" destination="Qz5-0g-71d" id="nlt-gJ-lZ6"/>
+                <outlet property="Bet27" destination="8Q4-Wy-Vu4" id="NTz-7f-IEy"/>
+                <outlet property="Bet28" destination="ql7-Z4-r3n" id="rJt-e8-i2j"/>
+                <outlet property="Bet3" destination="fsF-bc-Oly" id="xVO-5e-IP8"/>
+                <outlet property="Bet4" destination="uCt-ma-Cmp" id="Ow5-7Z-kkv"/>
+                <outlet property="Bet5" destination="Zd1-7u-Jyf" id="aND-nH-eiR"/>
+                <outlet property="Bet7" destination="e8p-QL-SVj" id="c3t-W2-HRG"/>
+                <outlet property="Bet8" destination="0lJ-sF-uQf" id="ZIL-ob-Dv8"/>
+                <outlet property="Bet9" destination="uUE-O5-DXy" id="rro-4f-paX"/>
+                <outlet property="bet6" destination="7Tw-9U-xQt" id="hRX-q0-mII"/>
+            </connections>
+            <point key="canvasLocation" x="40.5" y="111.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="WhiteBall" width="44" height="44"/>
+    </resources>
 </document>

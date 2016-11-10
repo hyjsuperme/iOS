@@ -18,7 +18,6 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PC蛋蛋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAC-gY-pnh">
                         <constraints>
-                            <constraint firstAttribute="width" constant="59" id="Dsw-Wv-ZFP"/>
                             <constraint firstAttribute="height" constant="21" id="Sf9-2d-9S8"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -91,7 +90,7 @@
                             <constraint firstAttribute="height" constant="21" id="qjI-Qm-tx0"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIf-bb-Q5I">
@@ -100,7 +99,7 @@
                             <constraint firstAttribute="height" constant="21" id="tbV-SD-Swq"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxr-0P-9yz">
@@ -109,7 +108,7 @@
                             <constraint firstAttribute="height" constant="21" id="rIC-dF-rhR"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfH-YB-GKI">
@@ -118,7 +117,7 @@
                             <constraint firstAttribute="width" constant="30" id="Rde-yV-dyt"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Right_jiantou" translatesAutoresizingMaskIntoConstraints="NO" id="WCh-kr-HBw">
@@ -178,6 +177,18 @@
                     <constraint firstItem="oU0-Ba-ymh" firstAttribute="leading" secondItem="DIf-bb-Q5I" secondAttribute="trailing" constant="8" id="zTN-Xc-OG1"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="GameType" destination="IAC-gY-pnh" id="qQt-EF-UWv"/>
+                <outlet property="Sum" destination="5U1-pL-E99" id="TPf-mu-vib"/>
+                <outlet property="ThreeNumber" destination="Gxr-0P-9yz" id="HG3-n3-YIV"/>
+                <outlet property="Time" destination="FeL-1B-zMx" id="qes-ke-Q2W"/>
+                <outlet property="changeAdd" destination="oU0-Ba-ymh" id="hf0-ER-Eg9"/>
+                <outlet property="firstNumber" destination="Q4e-kW-AyD" id="1xK-Oj-9Lz"/>
+                <outlet property="secondNumber" destination="DIf-bb-Q5I" id="D3c-QL-zVA"/>
+                <outlet property="stage" destination="aHJ-X8-mhO" id="5gs-KY-CYl"/>
+                <outlet property="sumNumber" destination="IfH-YB-GKI" id="bhI-yF-LMJ"/>
+                <outlet property="threeBg" destination="Gwg-iv-ouB" id="NHf-kE-QzU"/>
+            </connections>
             <point key="canvasLocation" x="33.5" y="54"/>
         </tableViewCell>
     </objects>

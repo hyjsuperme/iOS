@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface JWShowHandTableViewCell : UITableViewCell
-
++(instancetype)cellWithTableView:(UITableView *)tableView;
 @end

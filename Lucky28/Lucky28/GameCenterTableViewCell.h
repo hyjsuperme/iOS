@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JWHome.h"
 
 @interface GameCenterTableViewCell : UITableViewCell
 /**左边图片*/
@@ -33,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *LeftImage;
 /**右边图片*/
 @property (weak, nonatomic) IBOutlet UIImageView *RightImage;
+@property (nonatomic, strong) JWHome *home;
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 @end

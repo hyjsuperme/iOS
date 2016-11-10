@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface BetDefaultPopView : UIView
+typedef void (^BlockBetType)(NSMutableArray *BetArray ,NSInteger BetTag);
+@interface BetDefaultPopView : UIWindow
+@property (nonatomic, assign) NSInteger betName;
+@property (nonatomic, copy) BlockBetType betArray;
+@property (nonatomic, strong) UIButton *ChooseBtn;
+- (void)handleForBetType:(BlockBetType)block;
 - (void)show;
+- (void)dismiss;
 @end

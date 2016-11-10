@@ -7,6 +7,8 @@
 //
 
 #import "MiddleView.h"
+#import "BetDefaultPopView.h"
+
 
 @interface MiddleView ()
 {
@@ -17,6 +19,7 @@
     UILabel *label3;
     //NSMutableArray * buttonArray;
 }
+@property (nonatomic, strong) BetDefaultPopView *PopView;
 @property (nonatomic, strong) NSMutableArray *buttonArray;
 @end
 @implementation MiddleView
@@ -73,13 +76,19 @@
     UILabel *headLine =[[UILabel alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT *0.06 - 1, SCREEN_WIDTH, 1)];
     headLine.backgroundColor =JWColorA(238, 238, 238, 1);
     [self addSubview:headLine];
+
     
 }
 /**按钮点击*/
 - (void)BtnClick:(UIButton *)sender{
-    
+   
     NSInteger viewTag =[sender tag];
-    
+//    if (viewTag == 13) {
+//        BetDefaultPopView *popView =[[BetDefaultPopView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+//        [popView makeKeyAndVisible];
+//        //[popView show];
+//        NSLog(@"---");
+//    }
     if ([currentSelected isEqual: sender]) {
         
         return;
@@ -92,8 +101,9 @@
     if (self.index) {
         self.index(viewTag);
     }
-  //NSLog(@"-----%ld",(long)viewTag);
+ 
 }
+
 /**刷新界面*/
 - (void)refreshView:(NSInteger)Index{
    

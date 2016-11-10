@@ -10,15 +10,18 @@
 
 @implementation JWShowHandTableViewCell
 
++(instancetype)cellWithTableView:(UITableView *)tableView{
+    static NSString *ID =@"ID";
+    JWShowHandTableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:ID];
+    if (!cell) {
+        cell =[[[NSBundle mainBundle]loadNibNamed:@"JWShowHandTableViewCell" owner:nil options:nil]firstObject];
+    }
+    return cell;
+}
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
 
 @end

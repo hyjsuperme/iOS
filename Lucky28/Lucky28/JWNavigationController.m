@@ -7,6 +7,7 @@
 //
 
 #import "JWNavigationController.h"
+#import "UIBarButtonItem+Extension.h"
 
 @interface JWNavigationController ()<UIGestureRecognizerDelegate>
 
@@ -27,27 +28,19 @@
  */
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if (self.childViewControllers.count >0) {
-
-        UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [backButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
-        [backButton setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
-        [backButton setTitle:@"返回" forState:UIControlStateNormal];
-        [backButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [backButton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-        [backButton sizeToFit];
-        // 这句代码放在sizeToFit后面
-        backButton.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
-        [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
         // 隐藏底部的工具条
         viewController.hidesBottomBarWhenPushed = YES;
+       
+       // [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:@"navigationButtonReturn" highImage:@"navigationButtonReturn"];
+      
 
     }
     // 所有设置搞定后, 再push控制器
     [super pushViewController:viewController animated:animated];
 }
 - (void)back{
-    
+    [self popViewControllerAnimated:YES];
 }
 
 @end

@@ -1,19 +1,102 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="JWShowHandTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="43"/>
+                <frame key="frameInset" width="375" height="126"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投注梭哈：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Duj-MT-eUP">
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="pEY-WL-1MY">
+                        <color key="tintColor" red="1" green="0.63952797651290894" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="176" id="QND-bT-s7K"/>
+                            <constraint firstAttribute="height" constant="30" id="pSe-FR-cl4"/>
+                        </constraints>
+                    </slider>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrU-Iq-Tbz">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="NeX-GO-TiS"/>
+                            <constraint firstAttribute="width" constant="80" id="yay-tb-R9J"/>
+                        </constraints>
+                        <state key="normal" title="全额梭哈" backgroundImage="BetBox">
+                            <color key="titleColor" red="0.62347543239593506" green="0.62356525659561157" blue="0.6234472393989563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2H-kJ-1dq">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="8RZ-72-uca"/>
+                            <constraint firstAttribute="height" constant="48" id="ASP-CF-T1b"/>
+                        </constraints>
+                        <state key="normal" title="反选" backgroundImage="BetBox">
+                            <color key="titleColor" red="0.62347543239593506" green="0.62356525659561157" blue="0.6234472393989563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNd-nB-qqi">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="AKy-9z-42Q"/>
+                            <constraint firstAttribute="width" constant="80" id="QeD-Jl-HPb"/>
+                        </constraints>
+                        <state key="normal" title="输入金额" backgroundImage="BetBox">
+                            <color key="titleColor" red="0.74173468351364136" green="0.73732632398605347" blue="0.74512451887130737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(100)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MfU-W1-g7Q">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="RF8-Tq-3wK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rt2-ae-w03">
+                        <color key="backgroundColor" red="0.77114838361740112" green="0.77127915620803833" blue="0.77113121747970581" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="S5E-sK-Jd1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="MfU-W1-g7Q" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.76" id="1A1-xA-zZ3"/>
+                    <constraint firstItem="pEY-WL-1MY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="7yg-b1-vWD"/>
+                    <constraint firstItem="Duj-MT-eUP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Ehz-K0-qMz"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="vrU-Iq-Tbz" secondAttribute="bottom" constant="6" id="G0v-rO-jtD"/>
+                    <constraint firstItem="MfU-W1-g7Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="IhI-fh-NX5"/>
+                    <constraint firstItem="Rt2-ae-w03" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="L9I-QD-Lt3"/>
+                    <constraint firstAttribute="trailing" secondItem="Rt2-ae-w03" secondAttribute="trailing" id="NN7-F2-MVn"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="TNd-nB-qqi" secondAttribute="bottom" constant="6" id="Qz3-3s-5A8"/>
+                    <constraint firstItem="vrU-Iq-Tbz" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.63" id="RKJ-SX-0AS"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="P2H-kJ-1dq" secondAttribute="bottom" constant="6" id="VDm-iv-cSj"/>
+                    <constraint firstItem="P2H-kJ-1dq" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.1" id="YYU-lb-kme"/>
+                    <constraint firstItem="pEY-WL-1MY" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.08" id="Z49-P1-RTC"/>
+                    <constraint firstItem="TNd-nB-qqi" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.57" id="fW0-vF-tgG"/>
+                    <constraint firstItem="Duj-MT-eUP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="oO0-JG-zSr"/>
+                    <constraint firstItem="Rt2-ae-w03" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pWy-Ho-RaS"/>
+                </constraints>
             </tableViewCellContentView>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="BetBox" width="80" height="48"/>
+    </resources>
 </document>

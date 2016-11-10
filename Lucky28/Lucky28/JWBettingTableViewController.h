@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JWBetTableViewController : UITableViewController
+
+
+@interface JWBettingTableViewController : UITableViewController
+
+
+/**title*/
+@property (nonatomic, strong) NSString *CityName;
 
 @end

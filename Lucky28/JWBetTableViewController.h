@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface JWBetTableViewController : UITableViewController
+/**游戏名称*/
+@property (nonatomic, strong) NSString *cityName;
+/**历史记录*/
+@property (nonatomic, strong) NSArray *historyData;
+/**正在开奖记录*/
+@property (nonatomic, strong) NSArray *LoadData;
+
 
 @end

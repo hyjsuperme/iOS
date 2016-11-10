@@ -88,6 +88,22 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QA2-VU-AZx">
+                        <color key="backgroundColor" red="0.93325459957122803" green="0.93338549137115479" blue="0.93321335315704346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="eJa-h2-ZU5"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJh-M2-yUh">
+                        <connections>
+                            <action selector="LeftBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rq2-2b-crL"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzH-oT-iRg">
+                        <connections>
+                            <action selector="RightBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cdp-f6-M1t"/>
+                        </connections>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1分56秒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIN-iM-HWQ">
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="ew5-9K-fqO"/>
@@ -96,17 +112,10 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QA2-VU-AZx">
-                        <color key="backgroundColor" red="0.93325459957122803" green="0.93338549137115479" blue="0.93321335315704346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="eJa-h2-ZU5"/>
-                        </constraints>
-                    </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJh-M2-yUh"/>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzH-oT-iRg"/>
                 </subviews>
                 <constraints>
                     <constraint firstItem="JVZ-eZ-dIf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="0X7-b8-yH2"/>
+                    <constraint firstItem="5Q2-VP-ZRV" firstAttribute="leading" secondItem="i7C-Xo-dPE" secondAttribute="trailing" constant="10" id="9Wt-6k-uHs"/>
                     <constraint firstItem="beK-bJ-Sgm" firstAttribute="top" secondItem="k5M-du-pRW" secondAttribute="bottom" id="Bri-zh-t2z"/>
                     <constraint firstItem="tJh-M2-yUh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="CDP-95-8aw"/>
                     <constraint firstItem="JGM-VQ-mRh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" multiplier="1.76" id="FtW-0R-0CA"/>
@@ -127,15 +136,14 @@
                     <constraint firstItem="yPv-c3-HqW" firstAttribute="leading" secondItem="JVZ-eZ-dIf" secondAttribute="trailing" constant="8" id="byf-KX-FaI"/>
                     <constraint firstItem="k5M-du-pRW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="9" id="dJL-X9-Ei6"/>
                     <constraint firstItem="tJh-M2-yUh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="eHJ-0c-ooi"/>
-                    <constraint firstItem="AIN-iM-HWQ" firstAttribute="leading" secondItem="JGM-VQ-mRh" secondAttribute="trailing" id="kT8-Rg-Z8a"/>
                     <constraint firstItem="wzH-oT-iRg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="lB8-9M-WTv"/>
                     <constraint firstItem="beK-bJ-Sgm" firstAttribute="leading" secondItem="PRh-FB-yfD" secondAttribute="trailing" constant="8" id="lLl-D0-uzj"/>
                     <constraint firstAttribute="bottom" secondItem="tJh-M2-yUh" secondAttribute="bottom" id="m7i-Y5-qMp"/>
                     <constraint firstItem="QA2-VU-AZx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="oW2-kb-sWI"/>
                     <constraint firstItem="JVZ-eZ-dIf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="rKS-Dx-MkP"/>
-                    <constraint firstItem="5Q2-VP-ZRV" firstAttribute="leading" secondItem="i7C-Xo-dPE" secondAttribute="trailing" id="tYi-g7-nP3"/>
                     <constraint firstItem="wzH-oT-iRg" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.5" id="taj-FV-ne4"/>
                     <constraint firstAttribute="bottom" secondItem="5Q2-VP-ZRV" secondAttribute="bottom" id="tiD-2s-TY5"/>
+                    <constraint firstItem="AIN-iM-HWQ" firstAttribute="leading" secondItem="JGM-VQ-mRh" secondAttribute="trailing" constant="10" id="vaQ-qh-qgG"/>
                     <constraint firstItem="9h2-MY-xip" firstAttribute="leading" secondItem="JVZ-eZ-dIf" secondAttribute="trailing" constant="8" id="wWo-vG-bOe"/>
                 </constraints>
             </tableViewCellContentView>

@@ -19,8 +19,13 @@
 #import "MyViewController.h"
 #import "UIView+JWExtension.h"
 #import "MJExtension.h"
+#import "AFNetworking.h"
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+/**开奖中心*/
+#define MAINURL @"http://app.28.com/"
+#define BETURL @"http://app.28.com/bet"
+
 
 /*** 日志 ***/
 #ifdef DEBUG
