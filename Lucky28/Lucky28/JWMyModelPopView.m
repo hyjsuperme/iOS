@@ -8,13 +8,41 @@
 
 #import "JWMyModelPopView.h"
 
-@interface JWMyModelPopView ()
+@interface JWMyModelPopView ()<UITextFieldDelegate>
 /**选中模式*/
 @property (nonatomic, strong) UIButton *ModelSelect;
+/**压注金额*/
 @property (nonatomic, strong) UILabel *showHandRight;
-
+/**自定义模式选择号码*/
+@property (nonatomic, strong) NSMutableArray *BetArray;
+/**模式名称*/
+@property (nonatomic, strong) UITextField *ModelName1;
+/**滚动条*/
+@property (nonatomic, strong) UISlider *slider;
+/**梭哈*/
+@property (nonatomic, strong) UIButton *AllShowHand;
+/**反选*/
+@property (nonatomic, strong) UIButton *AgainstChoose;
+/**自定义模式条数*/
+@property (nonatomic, strong) NSMutableArray *customModel;
+/**每条模型数据*/
+@property (nonatomic, strong) NSMutableDictionary *Model;
 @end
 @implementation JWMyModelPopView
+
+- (NSMutableArray *)customModel{
+    if (!_customModel) {
+        _customModel =[NSMutableArray array];
+    }
+    return _customModel;
+}
+
+- (NSMutableArray *)BetArray{
+    if (!_BetArray) {
+        _BetArray =[NSMutableArray array];
+    }
+    return _BetArray;
+}
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self =[super initWithFrame:frame]) {
         //背景遮盖
@@ -79,7 +107,7 @@
         for (int i = 0; i < 28; i++) {
             int a = (i / 7);
             CGFloat BtnX = (i % 7)*44 + 20;
-            CGFloat BtnY = a*44 +ContentView.height *0.32;
+            CGFloat BtnY = a*44 +ContentView.height *0.30;
             CGFloat BtnWidth = 34;
             CGFloat BtnHeight =34;
             
@@ -93,78 +121,33 @@
           
             [ContentView addSubview:button];
         }
-        UILabel *lin2 =[[UILabel alloc]initWithFrame:CGRectMake(0, ContentView.height *0.6, ContentView.width, 1)];
+        UILabel *lin2 =[[UILabel alloc]initWithFrame:CGRectMake(0, ContentView.height *0.58, ContentView.width, 1)];
         lin2.backgroundColor =JWColorA(200, 200, 200, 1);
         [ContentView addSubview:lin2];
         
-        UILabel *showHand =[[UILabel alloc]initWithFrame:CGRectMake(0.048*ContentView.width, 0.62*ContentView.height, 70, 18)];
-        showHand.text=@"投注梭哈";
-        showHand.textColor =JWColorA(124, 124, 124, 1);
-        [ContentView addSubview:showHand];
-       
-        UIImage *setLeft =[UIImage imageNamed:@"chooseSlider"];
-        UIImage *setRigth =[UIImage imageNamed:@"sliderLine"];
-        //滑动块图片
-        UIImage *thumbImage =[UIImage imageNamed:@"sliderBall"];
-        //滑动器
-        UISlider * slider =[[UISlider alloc]initWithFrame:CGRectMake(0.284 *ContentView.width, 0.625*ContentView.height, 164, 16)];
-        slider.backgroundColor =[UIColor clearColor];
-        slider.value =0.5;
-        slider.minimumValue =0.0;
-        slider.maximumValue =1.0;
-        [slider setMinimumTrackImage:setLeft forState:UIControlStateNormal];
-        [slider setMaximumTrackImage:setRigth forState:UIControlStateNormal];
-        //这里要加UIControlStateHighlighted的状态，不然在滑动的时候会变回原生的状态
-        [slider setThumbImage:thumbImage forState:UIControlStateHighlighted];
-        [slider setThumbImage:thumbImage forState:UIControlStateNormal];
-        [ContentView addSubview:slider];
-        //滑块拖动时的事件
-        [slider addTarget:self action:@selector(sliderValue:) forControlEvents:UIControlEventValueChanged];
         
         
         
-        self.showHandRight =[[UILabel alloc]initWithFrame:CGRectMake(0.824*ContentView.width, 0.62*ContentView.height, 70, 18)];
-        self.showHandRight.text=@"(100)";
-        self.showHandRight.textColor =JWColorA(124, 124, 124, 1);
-        [ContentView addSubview:self.showHandRight];
-        
-        UIButton *AllShowHand =[[UIButton alloc]initWithFrame:CGRectMake(0.26*ContentView.width, 0.68*ContentView.height, 71, 43)];
-        [AllShowHand setTitle:@"全额梭哈" forState:UIControlStateNormal];
-        [AllShowHand setTitleColor:[UIColor colorWithRed:160/255.0 green:160/255.0 blue:160/255.0 alpha:1] forState:UIControlStateNormal];
-        [AllShowHand setBackgroundImage:[UIImage imageNamed:@"CancelBtn"] forState:UIControlStateNormal];
-        AllShowHand.titleLabel.font =[UIFont systemFontOfSize:16];
-        [ContentView addSubview:AllShowHand];
-        
-        UIButton *AgainstChoose =[[UIButton alloc]initWithFrame:CGRectMake(0.485*ContentView.width, 0.68*ContentView.height, 71, 43)];
-        [AgainstChoose setTitle:@"反选" forState:UIControlStateNormal];
-        [AgainstChoose setTitleColor:[UIColor colorWithRed:160/255.0 green:160/255.0 blue:160/255.0 alpha:1] forState:UIControlStateNormal];
-        [AgainstChoose setBackgroundImage:[UIImage imageNamed:@"CancelBtn"] forState:UIControlStateNormal];
-         AgainstChoose.titleLabel.font =[UIFont systemFontOfSize:16];
-        [ContentView addSubview:AgainstChoose];
-        
-        UIButton *Money =[[UIButton alloc]initWithFrame:CGRectMake(0.71*ContentView.width, 0.68*ContentView.height, 71, 43)];
-        [Money setTitle:@"输入金额" forState:UIControlStateNormal];
-        [Money setTitleColor:[UIColor colorWithRed:160/255.0 green:160/255.0 blue:160/255.0 alpha:1] forState:UIControlStateNormal];
-        [Money setBackgroundImage:[UIImage imageNamed:@"BetDefault"] forState:UIControlStateNormal];
-         Money.titleLabel.font =[UIFont systemFontOfSize:16];
-        [ContentView addSubview:Money];
-        
-        UILabel *modelName =[[UILabel alloc]initWithFrame:CGRectMake(0.048*ContentView.width, 0.78*ContentView.height, 70, 18)];
+        UILabel *modelName =[[UILabel alloc]initWithFrame:CGRectMake(0.048*ContentView.width, 0.608*ContentView.height, 70, 18)];
         modelName.text=@"模式名称";
         modelName.textColor =JWColorA(124, 124, 124, 1);
         [ContentView addSubview:modelName];
         
-        UIButton *ModelName1 =[[UIButton alloc]initWithFrame:CGRectMake(0.26*ContentView.width, 0.77*ContentView.height, 160, 40)];
-        [ModelName1 setTitle:@"模式1" forState:UIControlStateNormal];
-        [ModelName1 setTitleColor:[UIColor colorWithRed:160/255.0 green:160/255.0 blue:160/255.0 alpha:1] forState:UIControlStateNormal];
-        [ModelName1 setBackgroundImage:[UIImage imageNamed:@"BetDefault"] forState:UIControlStateNormal];
-        [ContentView addSubview:ModelName1];
+        self.ModelName1 =[[UITextField alloc]initWithFrame:CGRectMake(0.26*ContentView.width, 0.59*ContentView.height, 160, 40)];
+        self.ModelName1.placeholder =@"请输入模式名称";
+        self.ModelName1.borderStyle =UITextBorderStyleRoundedRect;
+        self.ModelName1.userInteractionEnabled =NO;
+        self.ModelName1.delegate =self;
         
-        UIButton *delete =[[UIButton alloc]initWithFrame:CGRectMake(0.74*ContentView.width, 0.77*ContentView.height, 60, 40)];
+        [ContentView addSubview:self.ModelName1];
+        
+        UIButton *delete =[[UIButton alloc]initWithFrame:CGRectMake(0.74*ContentView.width, 0.59*ContentView.height, 60, 40)];
         [delete setTitle:@"删除" forState:UIControlStateNormal];
         [delete setTitleColor:[UIColor colorWithRed:160/255.0 green:160/255.0 blue:160/255.0 alpha:1] forState:UIControlStateNormal];
         [delete setBackgroundImage:[UIImage imageNamed:@"CancelBtn"] forState:UIControlStateNormal];
         [ContentView addSubview:delete];
+
+        
         
 //        UIButton *add =[[UIButton alloc]initWithFrame:CGRectMake(0.74*ContentView.width, 0.77*ContentView.height, 60, 40)];
 //        [add setTitle:@"编辑" forState:UIControlStateNormal];
@@ -173,6 +156,61 @@
 //        [ContentView addSubview:add];
         
         
+      
+        
+        
+        UILabel *showHand =[[UILabel alloc]initWithFrame:CGRectMake(0.048*ContentView.width, 0.69*ContentView.height, 70, 18)];
+        showHand.text=@"投注金额";
+        showHand.textColor =JWColorA(124, 124, 124, 1);
+        [ContentView addSubview:showHand];
+        
+        UIImage *setLeft =[UIImage imageNamed:@"chooseSlider"];
+        UIImage *setRigth =[UIImage imageNamed:@"sliderLine"];
+        //滑动块图片
+        UIImage *thumbImage =[UIImage imageNamed:@"sliderBall"];
+        //滑动器
+        self.slider =[[UISlider alloc]initWithFrame:CGRectMake(0.284 *ContentView.width, 0.695*ContentView.height, 164, 16)];
+        self.slider.backgroundColor =[UIColor clearColor];
+        self.slider.value =0.5;
+        self.slider.minimumValue =0.0;
+        self.slider.maximumValue =1.0;
+        [self.slider setMinimumTrackImage:setLeft forState:UIControlStateNormal];
+        [self.slider setMaximumTrackImage:setRigth forState:UIControlStateNormal];
+        //这里要加UIControlStateHighlighted的状态，不然在滑动的时候会变回原生的状态
+        [self.slider setThumbImage:thumbImage forState:UIControlStateHighlighted];
+        [self.slider setThumbImage:thumbImage forState:UIControlStateNormal];
+        [ContentView addSubview:self.slider];
+        //滑块拖动时的事件
+        [self.slider addTarget:self action:@selector(sliderValue:) forControlEvents:UIControlEventValueChanged];
+        self.slider.userInteractionEnabled =NO;
+        
+        
+        self.showHandRight =[[UILabel alloc]initWithFrame:CGRectMake(0.824*ContentView.width, 0.69*ContentView.height, 70, 18)];
+        self.showHandRight.text=[NSString stringWithFormat:@"(%.2f)",self.slider.value];
+        self.showHandRight.textColor =JWColorA(124, 124, 124, 1);
+        [ContentView addSubview:self.showHandRight];
+        
+        self.AllShowHand =[[UIButton alloc]initWithFrame:CGRectMake(0.26*ContentView.width, 0.76*ContentView.height, 71, 43)];
+        [self.AllShowHand setTitle:@"梭哈" forState:UIControlStateNormal];
+        [self.AllShowHand setTitleColor:[UIColor colorWithRed:160/255.0 green:160/255.0 blue:160/255.0 alpha:1] forState:UIControlStateNormal];
+        [self.AllShowHand setBackgroundImage:[UIImage imageNamed:@"CancelBtn"] forState:UIControlStateNormal];
+        self.AllShowHand.titleLabel.font =[UIFont systemFontOfSize:16];
+        [ContentView addSubview:self.AllShowHand];
+        
+       self.AgainstChoose =[[UIButton alloc]initWithFrame:CGRectMake(0.53*ContentView.width, 0.76*ContentView.height, 71, 43)];
+        [self.AgainstChoose setTitle:@"反选" forState:UIControlStateNormal];
+        [self.AgainstChoose setTitleColor:[UIColor colorWithRed:160/255.0 green:160/255.0 blue:160/255.0 alpha:1] forState:UIControlStateNormal];
+        [self.AgainstChoose setBackgroundImage:[UIImage imageNamed:@"CancelBtn"] forState:UIControlStateNormal];
+        self.AgainstChoose.titleLabel.font =[UIFont systemFontOfSize:16];
+        [ContentView addSubview:self.AgainstChoose];
+        
+//        UIButton *Money =[[UIButton alloc]initWithFrame:CGRectMake(0.71*ContentView.width, 0.78*ContentView.height, 71, 43)];
+//        [Money setTitle:@"输入金额" forState:UIControlStateNormal];
+//        [Money setTitleColor:[UIColor colorWithRed:160/255.0 green:160/255.0 blue:160/255.0 alpha:1] forState:UIControlStateNormal];
+//        [Money setBackgroundImage:[UIImage imageNamed:@"BetDefault"] forState:UIControlStateNormal];
+//        Money.titleLabel.font =[UIFont systemFontOfSize:16];
+//        [ContentView addSubview:Money];
+
         UILabel *lin3 =[[UILabel alloc]initWithFrame:CGRectMake(0, ContentView.height *0.86, ContentView.width, 1)];
         lin3.backgroundColor =JWColorA(200, 200, 200, 1);
         [ContentView addSubview:lin3];
@@ -196,6 +234,17 @@
     }
     return self;
 }
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    for (int i =0; i<8; i++) {
+        UIButton *button =[self viewWithTag:(i+1) * 100001];
+        if (button.selected) {
+             [button setTitle:textField.text forState:UIControlStateNormal];
+        }
+       
+    }
+    [self.ModelName1 resignFirstResponder];
+    return YES;
+}
 //编辑模式
 - (void)editingClick:(UIButton *)Edit{
     Edit.selected =!Edit.selected;
@@ -204,12 +253,20 @@
             UIButton *button =[self viewWithTag:(i+1) * 100001];
             button.userInteractionEnabled =YES;
             [button addTarget:self action:@selector(modelClick:) forControlEvents:UIControlEventTouchUpInside];
+            
+            if (button.selected) {
+                for (int i =0; i<28; i++) {
+                    UIButton *button =[self viewWithTag:(i+1) * 10000];
+                    button.userInteractionEnabled =YES;
+                    [button addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+                }
+                //模式名称用户交互开启
+                self.ModelName1.userInteractionEnabled =YES;
+                //投注梭哈用户交互开启
+                self.slider.userInteractionEnabled =YES;
+            }
         }
-        for (int i =0; i<28; i++) {
-            UIButton *button =[self viewWithTag:(i+1) * 10000];
-            button.userInteractionEnabled =YES;
-            [button addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-        }
+        
     } else{
         //关闭编辑模式
         for (int i =0; i<8; i++) {
@@ -222,6 +279,7 @@
             button.userInteractionEnabled =NO;
             [button addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
         }
+         self.ModelName1.userInteractionEnabled =NO;
         
     }
     
@@ -243,7 +301,19 @@
             button.userInteractionEnabled =YES;
             [button addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
         }
-    
+      
+    }
+    if (sender.selected) {
+        for (int i =0; i<28; i++) {
+            UIButton *button =[self viewWithTag:(i+1) * 10000];
+            button.userInteractionEnabled =YES;
+            [button addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+        }
+        //模式名称用户交互开启
+         self.ModelName1.userInteractionEnabled =YES;
+        //投注梭哈用户交互开启
+        self.slider.userInteractionEnabled =YES;
+        
     }
     if (self.ModelSelect == sender) {
         return;
@@ -259,9 +329,13 @@
     if (sender.selected) {
         [sender setBackgroundImage:[UIImage imageNamed:@"Number_back"] forState:UIControlStateSelected];
         [sender setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.BetArray addObject:sender.currentTitle];
     } else{
         [sender setTitleColor:[UIColor colorWithRed:160/255.0 green:160/255.0 blue:160/255.0 alpha:1]  forState:UIControlStateNormal];
+        [self.BetArray removeObject:sender.currentTitle];
     }
+    
+    NSLog(@"%@",self.BetArray);
 }
 - (void)click:(UIButton *)sender{
     if ([sender.currentTitle isEqualToString:@"确定"]) {
