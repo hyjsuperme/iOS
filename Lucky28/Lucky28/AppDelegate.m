@@ -20,6 +20,7 @@
     self.window =[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController =[[JWTabBarController alloc]init];
     [self.window makeKeyAndVisible];
+    [UINavigationBar appearance].tintColor =[UIColor whiteColor];
     return YES;
 }
 

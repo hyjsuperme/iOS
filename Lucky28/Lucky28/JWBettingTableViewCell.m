@@ -20,7 +20,7 @@
     _betArray =betArray;
    
     NSInteger Tag;
-    if (betArray.count >= 1) {
+    
         for (int i = 0; i < betArray.count; i++) {
             Tag =([betArray[i] integerValue]+1) *100;
             UIButton *button =[self viewWithTag:Tag];
@@ -28,8 +28,7 @@
             [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             button.selected =YES;
         }
-    }
- 
+    NSLog(@"123");
    
 }
 

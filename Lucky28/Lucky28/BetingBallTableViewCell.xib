@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,50 +13,62 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="375" height="43.5"/>
+                <frame key="frameInset" width="375" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syY-C5-Qcz">
-                        <frame key="frameInset" minX="8" minY="4" width="34" height="34"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syY-C5-Qcz">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="3wA-5p-UaF"/>
+                            <constraint firstAttribute="width" constant="34" id="r2G-EY-kDH"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <state key="normal" backgroundImage="Number_back">
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入下注金额" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rOJ-Jg-l0t">
-                        <frame key="frameInset" minX="57" minY="6" width="75" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入下注金额" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rOJ-Jg-l0t">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="Ijd-TQ-MF2"/>
+                            <constraint firstAttribute="width" constant="75" id="Mly-6c-2s5"/>
+                        </constraints>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="8"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PF9-kM-AY0">
-                        <frame key="frameInset" minX="174" minY="6" width="43" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PF9-kM-AY0">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="sml-3M-hF4"/>
+                            <constraint firstAttribute="height" constant="30" id="xRn-TW-4wO"/>
+                        </constraints>
                         <state key="normal" title="0.1倍" backgroundImage="BetDefault">
-                            <color key="titleColor" red="0.85090833902359009" green="0.85102826356887817" blue="0.85087054967880249" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="titleColor" red="0.76112180948257446" green="0.75659805536270142" blue="0.76460027694702148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9up-rg-MvK">
-                        <frame key="frameInset" minX="225" minY="6" width="43" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9up-rg-MvK">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="Fp1-kr-ml6"/>
+                            <constraint firstAttribute="height" constant="30" id="R7z-4T-rZ1"/>
+                        </constraints>
                         <state key="normal" title="0.5倍" backgroundImage="BetDefault">
-                            <color key="titleColor" red="0.85090833902359009" green="0.85102826356887817" blue="0.85087054967880249" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="titleColor" red="0.76112180948257446" green="0.75659805536270142" blue="0.76460027694702148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEO-Su-ex7">
-                        <frame key="frameInset" minX="276" minY="6" width="43" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEO-Su-ex7">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="IUn-wV-Tmy"/>
+                            <constraint firstAttribute="height" constant="30" id="s7n-cB-5ac"/>
+                        </constraints>
                         <state key="normal" title="2倍" backgroundImage="BetDefault">
-                            <color key="titleColor" red="0.85090833902359009" green="0.85102826356887817" blue="0.85087054967880249" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="titleColor" red="0.76112180948257446" green="0.75659805536270142" blue="0.76460027694702148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbQ-J0-xAE">
-                        <frame key="frameInset" minX="327" minY="6" width="43" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbQ-J0-xAE">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="1he-mS-uFA"/>
+                            <constraint firstAttribute="height" constant="30" id="qOc-4U-BJg"/>
+                        </constraints>
                         <state key="normal" title="10倍" backgroundImage="BetDefault">
-                            <color key="titleColor" red="0.85090833902359009" green="0.85102826356887817" blue="0.85087054967880249" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="titleColor" red="0.76112180948257446" green="0.75659805536270142" blue="0.76460027694702148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cG6-l9-cJ2">
@@ -67,11 +80,33 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3333.3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRt-QK-nqb">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="07r-e7-ci4"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.76164501905441284" green="0.75658702850341797" blue="0.7653009295463562" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="wbQ-J0-xAE" firstAttribute="top" secondItem="cG6-l9-cJ2" secondAttribute="bottom" constant="6" id="3h8-4d-29x"/>
+                    <constraint firstItem="rOJ-Jg-l0t" firstAttribute="leading" secondItem="syY-C5-Qcz" secondAttribute="trailing" constant="6" id="6IF-et-PDz"/>
                     <constraint firstAttribute="trailing" secondItem="cG6-l9-cJ2" secondAttribute="trailing" id="DFe-yb-sdu"/>
+                    <constraint firstItem="9up-rg-MvK" firstAttribute="leading" secondItem="PF9-kM-AY0" secondAttribute="trailing" constant="7" id="Lh9-Z0-2Gd"/>
+                    <constraint firstItem="PF9-kM-AY0" firstAttribute="top" secondItem="cG6-l9-cJ2" secondAttribute="bottom" constant="6" id="Rcu-Q3-TJC"/>
+                    <constraint firstItem="wbQ-J0-xAE" firstAttribute="leading" secondItem="fEO-Su-ex7" secondAttribute="trailing" constant="7" id="Tsw-Lh-pGB"/>
+                    <constraint firstItem="syY-C5-Qcz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="dLn-5f-MS8"/>
+                    <constraint firstItem="rOJ-Jg-l0t" firstAttribute="top" secondItem="cG6-l9-cJ2" secondAttribute="bottom" constant="6" id="eMq-Rh-4A9"/>
+                    <constraint firstItem="9up-rg-MvK" firstAttribute="top" secondItem="cG6-l9-cJ2" secondAttribute="bottom" constant="6" id="fzi-o5-n7g"/>
+                    <constraint firstItem="syY-C5-Qcz" firstAttribute="top" secondItem="cG6-l9-cJ2" secondAttribute="bottom" constant="4" id="h98-tW-Ta4"/>
                     <constraint firstItem="cG6-l9-cJ2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="kD3-R8-CTb"/>
+                    <constraint firstAttribute="trailing" secondItem="wbQ-J0-xAE" secondAttribute="trailing" constant="5" id="kKZ-41-cQ2"/>
+                    <constraint firstItem="hRt-QK-nqb" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.83" id="q1r-uY-zrb"/>
+                    <constraint firstItem="fEO-Su-ex7" firstAttribute="leading" secondItem="9up-rg-MvK" secondAttribute="trailing" constant="6" id="x7g-IC-hkJ"/>
                     <constraint firstItem="cG6-l9-cJ2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="y49-O0-IgK"/>
+                    <constraint firstItem="hRt-QK-nqb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zHr-Jn-gGB"/>
+                    <constraint firstItem="fEO-Su-ex7" firstAttribute="top" secondItem="cG6-l9-cJ2" secondAttribute="bottom" constant="6" id="zqG-ny-sZH"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

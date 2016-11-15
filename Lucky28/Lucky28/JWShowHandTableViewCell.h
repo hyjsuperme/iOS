@@ -9,5 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface JWShowHandTableViewCell : UITableViewCell
+/**下注滚动条*/
+@property (weak, nonatomic) IBOutlet UISlider *ShowHandSlider;
+/**梭哈*/
+@property (weak, nonatomic) IBOutlet UIButton *ShowHand;
+/**反选*/
+@property (weak, nonatomic) IBOutlet UIButton *Inverse;
+/**下注金额*/
+@property (weak, nonatomic) IBOutlet UILabel *SliderValue;
+
+
 +(instancetype)cellWithTableView:(UITableView *)tableView;
 @end

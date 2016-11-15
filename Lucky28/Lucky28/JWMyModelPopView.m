@@ -294,6 +294,7 @@
     sender.selected =YES;
     if ([sender.currentTitle isEqualToString:@"+"]) {
         [sender setTitle:@"添加" forState:UIControlStateNormal];
+        sender.titleLabel.font =[UIFont systemFontOfSize:11];
         [self.ModelSelect setTitle:@"+" forState:UIControlStateNormal];
       
         for (int i =0; i<28; i++) {
@@ -339,7 +340,12 @@
 }
 - (void)click:(UIButton *)sender{
     if ([sender.currentTitle isEqualToString:@"确定"]) {
-        
+        self.Model =[NSMutableDictionary dictionary];
+        [self.Model setObject:self.BetArray forKey:@"Nmuber"];//投注号码
+        [self.Model setObject:self.ModelName1.text forKey:@"Name"];//投注名称
+        [self.Model setObject:[NSString stringWithFormat:@"%0.2f",self.slider.value] forKey:@"Money"];//投注金额
+        [self.customModel addObject:self.Model];
+        NSLog(@"++++++%@",self.customModel);
     }
     self.hidden =YES;
 }

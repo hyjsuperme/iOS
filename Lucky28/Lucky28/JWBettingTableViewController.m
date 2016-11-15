@@ -38,6 +38,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title =self.CityName;
+    self.navigationItem.rightBarButtonItem =[[UIBarButtonItem alloc]initWithTitle:@"投注记录" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
     JWfootView *foot =[[JWfootView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 55)];
     self.tableView.tableFooterView =foot;
     self.tableView.showsVerticalScrollIndicator =NO;
@@ -53,7 +55,7 @@
     return 5;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 2) {
+    if (section == 3) {
         return self.betArray.count;
     }else{
         return 1;
@@ -80,9 +82,27 @@
         
         return cell;
     }
-    else if (indexPath.section == 3 && indexPath.row ==0){
+    else if (indexPath.section == 2 && indexPath.row ==0){
         JWShowHandTableViewCell *cell =[JWShowHandTableViewCell cellWithTableView:tableView];
          cell.selectionStyle =UITableViewCellSelectionStyleNone;
+        UIImage *setLeft =[UIImage imageNamed:@"chooseSlider"];
+        UIImage *setRigth =[UIImage imageNamed:@"sliderLine"];
+        //滑动块图片
+        UIImage *thumbImage =[UIImage imageNamed:@"sliderBall"];
+         cell.ShowHandSlider.value =0.50;
+         cell.ShowHandSlider.backgroundColor =[UIColor clearColor];
+         cell.ShowHandSlider.value =0.5;
+         cell.ShowHandSlider.minimumValue =0.0;
+         cell.ShowHandSlider.maximumValue =1.0;
+        [cell.ShowHandSlider setMinimumTrackImage:setLeft forState:UIControlStateNormal];
+        [cell.ShowHandSlider setMaximumTrackImage:setRigth forState:UIControlStateNormal];
+        //这里要加UIControlStateHighlighted的状态，不然在滑动的时候会变回原生的状态
+        [cell.ShowHandSlider setThumbImage:thumbImage forState:UIControlStateHighlighted];
+        [cell.ShowHandSlider setThumbImage:thumbImage forState:UIControlStateNormal];
+        [cell.ShowHandSlider addTarget:self action:@selector(changeValue:) forControlEvents:UIControlEventValueChanged];
+        [cell.ShowHand addTarget:self action:@selector(showHandClick:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.Inverse addTarget:self action:@selector(inverseClick:) forControlEvents:UIControlEventTouchUpInside];
+        
         return cell;
     }
     else if (indexPath.section == 4 && indexPath.row ==0){
@@ -90,7 +110,7 @@
         
          cell.selectionStyle =UITableViewCellSelectionStyleNone;
         return cell;
-    }else if(indexPath.section == 2 ){
+    }else if(indexPath.section == 3 ){
         
         BetingBallTableViewCell *cell =[BetingBallTableViewCell cellWithTableView:tableView];
         cell.selectionStyle =UITableViewCellSelectionStyleNone;
@@ -103,7 +123,40 @@
     
     return 0;
 }
+- (void)changeValue:(UISlider *)slider{
+    UILabel *label =[self.view viewWithTag:511];
+    label.text =[NSString stringWithFormat:@"(%0.2f)",slider.value];
+    UIButton *button =[self.view viewWithTag:531];
+    button.selected =NO;
+    
+    if ( (int)slider.value == 1) {
+        button.selected =YES;
+    }
+   // [button setBackgroundImage:[UIImage imageNamed:@"BetBox"]forState:UIControlStateNormal];
 
+    
+}
+//点击梭哈
+- (void)showHandClick:(UIButton *)sender{
+    sender.selected= YES;
+    UISlider *slider =[self.view viewWithTag:521];
+    slider.value =1.0;
+}
+//点击反选
+- (void)inverseClick:(UIButton *)sender{
+    [self.betArray removeAllObjects];
+    for (int i =0; i<28; i++) {
+        UIButton *button =[self.view viewWithTag:(i+1)*100];
+        if (!button.selected) {
+
+             NSLog(@"%@ %d",button.currentTitle, button.selected);
+            [self.betArray addObject:button.currentTitle];
+
+        }
+    }
+    [self.tableView reloadData];
+    
+}
 - (void)Receive:(NSNotification *)Noti{
     NSDictionary *dic =Noti.userInfo;
     NSString *str =dic[@"ButtonName"];
@@ -133,7 +186,7 @@
             [self.betArray addObject:BetArray[i]];
         }
         self.alertView.betName =BetName;
-        
+         NSLog(@"******%@",self.betArray);
         [self.tableView reloadData];
      
     }];
@@ -161,10 +214,10 @@
     else if (indexPath.section == 1){
         return 450;
     }
-    else if (indexPath.section == 2){
+    else if (indexPath.section == 3){
         return 44;
     }
-    else if (indexPath.section == 3){
+    else if (indexPath.section == 2){
         return 127;
     } else if (indexPath.section == 4){
         return 130;
