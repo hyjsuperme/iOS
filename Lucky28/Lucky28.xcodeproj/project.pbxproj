@@ -18,6 +18,10 @@
 		194053C11DBF4D6F00E6E541 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 194053C01DBF4D6F00E6E541 /* HomeViewController.m */; };
 		194083EC1DC99BAE0063619A /* JWBetDefaultPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 194083EB1DC99BAE0063619A /* JWBetDefaultPopViewController.m */; };
 		194083F51DC9AA110063619A /* BetDefaultPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 194083F41DC9AA110063619A /* BetDefaultPopView.m */; };
+		195277F51DDED4FD00929301 /* JWBetBetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195277F31DDED4FD00929301 /* JWBetBetailsTableViewController.m */; };
+		195277F61DDED4FD00929301 /* JWBetBetailsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 195277F41DDED4FD00929301 /* JWBetBetailsTableViewController.xib */; };
+		195277FA1DE016EC00929301 /* JWBetBetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 195277F81DE016EC00929301 /* JWBetBetailsTableViewCell.m */; };
+		195277FB1DE016EC00929301 /* JWBetBetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 195277F91DE016EC00929301 /* JWBetBetailsTableViewCell.xib */; };
 		1956EC3E1DD4498100AC8118 /* JWMyModelPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1956EC3D1DD4498100AC8118 /* JWMyModelPopView.m */; };
 		19730E7F1DC1EEDE007D53E7 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 19730E7B1DC1EEDE007D53E7 /* MBProgressHUD+MJ.m */; };
 		19730E801DC1EEDE007D53E7 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 19730E7C1DC1EEDE007D53E7 /* MBProgressHUD.bundle */; };
@@ -49,6 +53,8 @@
 		19730ED41DC1EEED007D53E7 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 19730EC21DC1EEED007D53E7 /* UIImageView+HighlightedWebCache.m */; };
 		19730ED51DC1EEED007D53E7 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 19730EC41DC1EEED007D53E7 /* UIImageView+WebCache.m */; };
 		19730ED61DC1EEED007D53E7 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 19730EC61DC1EEED007D53E7 /* UIView+WebCacheOperation.m */; };
+		1978B5171DDC2D7600EEEE60 /* JWUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1978B5151DDC2D7600EEEE60 /* JWUserLoginViewController.m */; };
+		1978B5181DDC2D7600EEEE60 /* JWUserLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1978B5161DDC2D7600EEEE60 /* JWUserLoginViewController.xib */; };
 		197D15461DC30391008E260D /* BetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 197D15441DC30391008E260D /* BetTableViewCell.m */; };
 		197D15471DC30391008E260D /* BetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 197D15451DC30391008E260D /* BetTableViewCell.xib */; };
 		197D154D1DC3277C008E260D /* JWBetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197D154C1DC3277C008E260D /* JWBetTableViewController.m */; };
@@ -70,9 +76,15 @@
 		19A12C0B1DC71CA4004C8846 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A12C041DC71CA4004C8846 /* AFURLResponseSerialization.m */; };
 		19A12C0C1DC71CA4004C8846 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A12C061DC71CA4004C8846 /* AFURLSessionManager.m */; };
 		19A12C0F1DC72CD2004C8846 /* JWHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A12C0E1DC72CD2004C8846 /* JWHome.m */; };
+		19CC0AC21DDC4B29000728C4 /* NSString+JWExtesion.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CC0AC11DDC4B29000728C4 /* NSString+JWExtesion.m */; };
+		19D0C5A71DDC06A400B0A444 /* JWBetHistroyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D0C5A61DDC06A400B0A444 /* JWBetHistroyTableViewController.m */; };
+		19D0C5AC1DDC071400B0A444 /* JWBetHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D0C5AA1DDC071400B0A444 /* JWBetHistoryTableViewCell.m */; };
+		19D0C5AD1DDC071400B0A444 /* JWBetHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19D0C5AB1DDC071400B0A444 /* JWBetHistoryTableViewCell.xib */; };
 		19D6CA7C1DC345BB007E88EB /* JWBetTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19D6CA7B1DC345BB007E88EB /* JWBetTableViewController.xib */; };
 		19D6CA801DC34C01007E88EB /* JWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D6CA7E1DC34C01007E88EB /* JWTableViewCell.m */; };
 		19D6CA811DC34C01007E88EB /* JWTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19D6CA7F1DC34C01007E88EB /* JWTableViewCell.xib */; };
+		19E69A081DDC371E007EA99F /* JWRegisrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E69A061DDC371E007EA99F /* JWRegisrationViewController.m */; };
+		19E69A091DDC371E007EA99F /* JWRegisrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E69A071DDC371E007EA99F /* JWRegisrationViewController.xib */; };
 		19F119941DC069BC00AA5D49 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F119931DC069BC00AA5D49 /* HeaderView.m */; };
 		19F119971DC069DB00AA5D49 /* MiddleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F119961DC069DB00AA5D49 /* MiddleView.m */; };
 		19FABA9E1DC098AC00AF9030 /* InformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FABA9D1DC098AC00AF9030 /* InformView.m */; };
@@ -128,6 +140,12 @@
 		194083EB1DC99BAE0063619A /* JWBetDefaultPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWBetDefaultPopViewController.m; sourceTree = "<group>"; };
 		194083F31DC9AA110063619A /* BetDefaultPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetDefaultPopView.h; sourceTree = "<group>"; };
 		194083F41DC9AA110063619A /* BetDefaultPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetDefaultPopView.m; sourceTree = "<group>"; };
+		195277F21DDED4FD00929301 /* JWBetBetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWBetBetailsTableViewController.h; sourceTree = "<group>"; };
+		195277F31DDED4FD00929301 /* JWBetBetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWBetBetailsTableViewController.m; sourceTree = "<group>"; };
+		195277F41DDED4FD00929301 /* JWBetBetailsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWBetBetailsTableViewController.xib; sourceTree = "<group>"; };
+		195277F71DE016EC00929301 /* JWBetBetailsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWBetBetailsTableViewCell.h; sourceTree = "<group>"; };
+		195277F81DE016EC00929301 /* JWBetBetailsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWBetBetailsTableViewCell.m; sourceTree = "<group>"; };
+		195277F91DE016EC00929301 /* JWBetBetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWBetBetailsTableViewCell.xib; sourceTree = "<group>"; };
 		1956EC3C1DD4498100AC8118 /* JWMyModelPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWMyModelPopView.h; sourceTree = "<group>"; };
 		1956EC3D1DD4498100AC8118 /* JWMyModelPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWMyModelPopView.m; sourceTree = "<group>"; };
 		19730E7A1DC1EEDE007D53E7 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
@@ -191,6 +209,9 @@
 		19730EC41DC1EEED007D53E7 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		19730EC51DC1EEED007D53E7 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		19730EC61DC1EEED007D53E7 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		1978B5141DDC2D7600EEEE60 /* JWUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWUserLoginViewController.h; sourceTree = "<group>"; };
+		1978B5151DDC2D7600EEEE60 /* JWUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWUserLoginViewController.m; sourceTree = "<group>"; };
+		1978B5161DDC2D7600EEEE60 /* JWUserLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWUserLoginViewController.xib; sourceTree = "<group>"; };
 		197D15431DC30391008E260D /* BetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetTableViewCell.h; sourceTree = "<group>"; };
 		197D15441DC30391008E260D /* BetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetTableViewCell.m; sourceTree = "<group>"; };
 		197D15451DC30391008E260D /* BetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetTableViewCell.xib; sourceTree = "<group>"; };
@@ -229,10 +250,20 @@
 		19A12C061DC71CA4004C8846 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		19A12C0D1DC72CD2004C8846 /* JWHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWHome.h; sourceTree = "<group>"; };
 		19A12C0E1DC72CD2004C8846 /* JWHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWHome.m; sourceTree = "<group>"; };
+		19CC0AC01DDC4B29000728C4 /* NSString+JWExtesion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JWExtesion.h"; sourceTree = "<group>"; };
+		19CC0AC11DDC4B29000728C4 /* NSString+JWExtesion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JWExtesion.m"; sourceTree = "<group>"; };
+		19D0C5A51DDC06A400B0A444 /* JWBetHistroyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWBetHistroyTableViewController.h; sourceTree = "<group>"; };
+		19D0C5A61DDC06A400B0A444 /* JWBetHistroyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWBetHistroyTableViewController.m; sourceTree = "<group>"; };
+		19D0C5A91DDC071400B0A444 /* JWBetHistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWBetHistoryTableViewCell.h; sourceTree = "<group>"; };
+		19D0C5AA1DDC071400B0A444 /* JWBetHistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWBetHistoryTableViewCell.m; sourceTree = "<group>"; };
+		19D0C5AB1DDC071400B0A444 /* JWBetHistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWBetHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		19D6CA7B1DC345BB007E88EB /* JWBetTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWBetTableViewController.xib; sourceTree = "<group>"; };
 		19D6CA7D1DC34C01007E88EB /* JWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWTableViewCell.h; sourceTree = "<group>"; };
 		19D6CA7E1DC34C01007E88EB /* JWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWTableViewCell.m; sourceTree = "<group>"; };
 		19D6CA7F1DC34C01007E88EB /* JWTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWTableViewCell.xib; sourceTree = "<group>"; };
+		19E69A051DDC371E007EA99F /* JWRegisrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWRegisrationViewController.h; sourceTree = "<group>"; };
+		19E69A061DDC371E007EA99F /* JWRegisrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWRegisrationViewController.m; sourceTree = "<group>"; };
+		19E69A071DDC371E007EA99F /* JWRegisrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWRegisrationViewController.xib; sourceTree = "<group>"; };
 		19F119921DC069BC00AA5D49 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
 		19F119931DC069BC00AA5D49 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		19F119951DC069DB00AA5D49 /* MiddleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiddleView.h; sourceTree = "<group>"; };
@@ -415,6 +446,19 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		1978B5131DDC2D4800EEEE60 /* UserLogin（用户登录） */ = {
+			isa = PBXGroup;
+			children = (
+				1978B5141DDC2D7600EEEE60 /* JWUserLoginViewController.h */,
+				1978B5151DDC2D7600EEEE60 /* JWUserLoginViewController.m */,
+				1978B5161DDC2D7600EEEE60 /* JWUserLoginViewController.xib */,
+				19E69A051DDC371E007EA99F /* JWRegisrationViewController.h */,
+				19E69A061DDC371E007EA99F /* JWRegisrationViewController.m */,
+				19E69A071DDC371E007EA99F /* JWRegisrationViewController.xib */,
+			);
+			name = "UserLogin（用户登录）";
+			sourceTree = "<group>";
+		};
 		197D153E1DC3017E008E260D /* HomeMain */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,11 +498,11 @@
 		19A12BE11DC6DD6A004C8846 /* Bet */ = {
 			isa = PBXGroup;
 			children = (
+				19A12BE81DC6F1DB004C8846 /* JWBetHeaderTableViewCell.m */,
 				19A12BE21DC6DDAC004C8846 /* JWBettingTableViewCell.h */,
 				19A12BE31DC6DDAC004C8846 /* JWBettingTableViewCell.m */,
 				19A12BE41DC6DDAC004C8846 /* JWBettingTableViewCell.xib */,
 				19A12BE71DC6F1DB004C8846 /* JWBetHeaderTableViewCell.h */,
-				19A12BE81DC6F1DB004C8846 /* JWBetHeaderTableViewCell.m */,
 				19A12BE91DC6F1DB004C8846 /* JWBetHeaderTableViewCell.xib */,
 				19A12BEC1DC6F3A3004C8846 /* JWShowHandTableViewCell.h */,
 				19A12BED1DC6F3A3004C8846 /* JWShowHandTableViewCell.m */,
@@ -495,6 +539,32 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		19D0C5A41DDC051500B0A444 /* BetHistory */ = {
+			isa = PBXGroup;
+			children = (
+				19D0C5A81DDC06D900B0A444 /* View */,
+				19D0C5A51DDC06A400B0A444 /* JWBetHistroyTableViewController.h */,
+				19D0C5A61DDC06A400B0A444 /* JWBetHistroyTableViewController.m */,
+				195277F21DDED4FD00929301 /* JWBetBetailsTableViewController.h */,
+				195277F31DDED4FD00929301 /* JWBetBetailsTableViewController.m */,
+				195277F41DDED4FD00929301 /* JWBetBetailsTableViewController.xib */,
+			);
+			name = BetHistory;
+			sourceTree = "<group>";
+		};
+		19D0C5A81DDC06D900B0A444 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				19D0C5A91DDC071400B0A444 /* JWBetHistoryTableViewCell.h */,
+				19D0C5AA1DDC071400B0A444 /* JWBetHistoryTableViewCell.m */,
+				19D0C5AB1DDC071400B0A444 /* JWBetHistoryTableViewCell.xib */,
+				195277F71DE016EC00929301 /* JWBetBetailsTableViewCell.h */,
+				195277F81DE016EC00929301 /* JWBetBetailsTableViewCell.m */,
+				195277F91DE016EC00929301 /* JWBetBetailsTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		5B0460CE1DBF0D4800F03B89 /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,6 +579,7 @@
 		5B0460D91DBF376500F03B89 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				19D0C5A41DDC051500B0A444 /* BetHistory */,
 				197D153E1DC3017E008E260D /* HomeMain */,
 				197D153F1DC3019D008E260D /* Bet */,
 			);
@@ -538,6 +609,7 @@
 		5B8C79481DBDFCA200DCB45B /* Lucky28 */ = {
 			isa = PBXGroup;
 			children = (
+				1978B5131DDC2D4800EEEE60 /* UserLogin（用户登录） */,
 				5B8C79931DBE272600DCB45B /* Home(首页) */,
 				5B8C79971DBE28FB00DCB45B /* My(我的) */,
 				5B8C79961DBE289F00DCB45B /* Expiry（兑奖） */,
@@ -595,6 +667,8 @@
 				5B8C79831DBE085700DCB45B /* JWTabBar.h */,
 				5B8C79841DBE085700DCB45B /* JWTabBar.m */,
 				5B8C79881DBE0C3D00DCB45B /* PrefixHeader.pch */,
+				19CC0AC01DDC4B29000728C4 /* NSString+JWExtesion.h */,
+				19CC0AC11DDC4B29000728C4 /* NSString+JWExtesion.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -752,19 +826,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E69A091DDC371E007EA99F /* JWRegisrationViewController.xib in Resources */,
 				19D6CA7C1DC345BB007E88EB /* JWBetTableViewController.xib in Resources */,
 				1937B46F1DBF508400B2C46B /* InfoTableViewCell.xib in Resources */,
 				19A12BE61DC6DDAC004C8846 /* JWBettingTableViewCell.xib in Resources */,
 				5B8C79591DBDFCA200DCB45B /* LaunchScreen.storyboard in Resources */,
 				1937B4741DBF509700B2C46B /* NewInfoTableViewCell.xib in Resources */,
 				197D15471DC30391008E260D /* BetTableViewCell.xib in Resources */,
+				195277F61DDED4FD00929301 /* JWBetBetailsTableViewController.xib in Resources */,
+				1978B5181DDC2D7600EEEE60 /* JWUserLoginViewController.xib in Resources */,
 				19D6CA811DC34C01007E88EB /* JWTableViewCell.xib in Resources */,
 				5B8C79561DBDFCA200DCB45B /* Assets.xcassets in Resources */,
 				19A12BF01DC6F3A3004C8846 /* JWShowHandTableViewCell.xib in Resources */,
 				19A12BEB1DC6F1DB004C8846 /* JWBetHeaderTableViewCell.xib in Resources */,
 				1937B46A1DBF506700B2C46B /* GameCenterTableViewCell.xib in Resources */,
 				19A12BF51DC6FF9A004C8846 /* JWBetBottomTableViewCell.xib in Resources */,
+				19D0C5AD1DDC071400B0A444 /* JWBetHistoryTableViewCell.xib in Resources */,
 				19730E801DC1EEDE007D53E7 /* MBProgressHUD.bundle in Resources */,
+				195277FB1DE016EC00929301 /* JWBetBetailsTableViewCell.xib in Resources */,
 				1931A5C11DD1B13C00861452 /* BetingBallTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -805,8 +884,10 @@
 				19730E9E1DC1EEE7007D53E7 /* MJMember.m in Sources */,
 				19A12C0C1DC71CA4004C8846 /* AFURLSessionManager.m in Sources */,
 				5B8C794E1DBDFCA200DCB45B /* AppDelegate.m in Sources */,
+				195277FA1DE016EC00929301 /* JWBetBetailsTableViewCell.m in Sources */,
 				19A12C091DC71CA4004C8846 /* AFSecurityPolicy.m in Sources */,
 				19730ED31DC1EEED007D53E7 /* UIImage+WebP.m in Sources */,
+				19E69A081DDC371E007EA99F /* JWRegisrationViewController.m in Sources */,
 				19730ECB1DC1EEED007D53E7 /* SDWebImageDecoder.m in Sources */,
 				19730ED21DC1EEED007D53E7 /* UIImage+MultiFormat.m in Sources */,
 				19730EC91DC1EEED007D53E7 /* SDImageCache.m in Sources */,
@@ -825,8 +906,10 @@
 				19A12BE51DC6DDAC004C8846 /* JWBettingTableViewCell.m in Sources */,
 				197D15501DC3398E008E260D /* UIBarButtonItem+Extension.m in Sources */,
 				19F119941DC069BC00AA5D49 /* HeaderView.m in Sources */,
+				19D0C5A71DDC06A400B0A444 /* JWBetHistroyTableViewController.m in Sources */,
 				5B8C79A01DBE297500DCB45B /* ExpiryViewController.m in Sources */,
 				197D15461DC30391008E260D /* BetTableViewCell.m in Sources */,
+				195277F51DDED4FD00929301 /* JWBetBetailsTableViewController.m in Sources */,
 				1937B46E1DBF508400B2C46B /* InfoTableViewCell.m in Sources */,
 				19730EA01DC1EEE7007D53E7 /* MJType.m in Sources */,
 				1937B4731DBF509700B2C46B /* NewInfoTableViewCell.m in Sources */,
@@ -847,6 +930,7 @@
 				19730E9B1DC1EEE7007D53E7 /* MJConst.m in Sources */,
 				19A12BDF1DC6DD39004C8846 /* JWBettingTableViewController.m in Sources */,
 				19730ECC1DC1EEED007D53E7 /* SDWebImageDownloader.m in Sources */,
+				1978B5171DDC2D7600EEEE60 /* JWUserLoginViewController.m in Sources */,
 				5B8C79851DBE085700DCB45B /* JWTabBar.m in Sources */,
 				19730EC81DC1EEED007D53E7 /* NSData+ImageContentType.m in Sources */,
 				5B0460D11DBF0DB300F03B89 /* JWNavigationController.m in Sources */,
@@ -854,8 +938,10 @@
 				19730EA31DC1EEE7007D53E7 /* NSObject+MJKeyValue.m in Sources */,
 				5B8C794B1DBDFCA200DCB45B /* main.m in Sources */,
 				19730ED01DC1EEED007D53E7 /* UIButton+WebCache.m in Sources */,
+				19CC0AC21DDC4B29000728C4 /* NSString+JWExtesion.m in Sources */,
 				19730E9D1DC1EEE7007D53E7 /* MJIvar.m in Sources */,
 				1956EC3E1DD4498100AC8118 /* JWMyModelPopView.m in Sources */,
+				19D0C5AC1DDC071400B0A444 /* JWBetHistoryTableViewCell.m in Sources */,
 				194053C11DBF4D6F00E6E541 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="BetingBallTableViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="identifer" id="KGk-i7-Jjw" customClass="BetingBallTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -40,36 +40,56 @@
                             <constraint firstAttribute="width" constant="40" id="sml-3M-hF4"/>
                             <constraint firstAttribute="height" constant="30" id="xRn-TW-4wO"/>
                         </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="0.1倍" backgroundImage="BetDefault">
                             <color key="titleColor" red="0.76112180948257446" green="0.75659805536270142" blue="0.76460027694702148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <state key="selected" backgroundImage="YesBtn"/>
+                        <connections>
+                            <action selector="OddsClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9Il-kd-HV9"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9up-rg-MvK">
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="Fp1-kr-ml6"/>
                             <constraint firstAttribute="height" constant="30" id="R7z-4T-rZ1"/>
                         </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="0.5倍" backgroundImage="BetDefault">
                             <color key="titleColor" red="0.76112180948257446" green="0.75659805536270142" blue="0.76460027694702148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <state key="selected" backgroundImage="YesBtn"/>
+                        <connections>
+                            <action selector="OddsClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="sif-J4-eZc"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEO-Su-ex7">
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="IUn-wV-Tmy"/>
                             <constraint firstAttribute="height" constant="30" id="s7n-cB-5ac"/>
                         </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="2倍" backgroundImage="BetDefault">
                             <color key="titleColor" red="0.76112180948257446" green="0.75659805536270142" blue="0.76460027694702148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <state key="selected" backgroundImage="YesBtn"/>
+                        <connections>
+                            <action selector="OddsClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cxW-t2-S8W"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbQ-J0-xAE">
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="1he-mS-uFA"/>
                             <constraint firstAttribute="height" constant="30" id="qOc-4U-BJg"/>
                         </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="10倍" backgroundImage="BetDefault">
                             <color key="titleColor" red="0.76112180948257446" green="0.75659805536270142" blue="0.76460027694702148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <state key="selected" backgroundImage="YesBtn"/>
+                        <connections>
+                            <action selector="OddsClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4c9-tm-MUJ"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cG6-l9-cJ2">
                         <color key="backgroundColor" red="0.77248317003250122" green="0.77259278297424316" blue="0.77244871854782104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -112,6 +132,9 @@
             <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="NumberBtn" destination="syY-C5-Qcz" id="yP5-zL-c9j"/>
+                <outlet property="Odds" destination="hRt-QK-nqb" id="f5A-39-AfG"/>
+                <outlet property="odd1" destination="PF9-kM-AY0" id="oC0-N2-nWL"/>
+                <outlet property="textField" destination="rOJ-Jg-l0t" id="wHv-Jf-yZN"/>
                 <outlet property="topColor" destination="cG6-l9-cJ2" id="9V8-BA-UAk"/>
             </connections>
             <point key="canvasLocation" x="-464.5" y="25"/>
@@ -120,5 +143,6 @@
     <resources>
         <image name="BetDefault" width="70" height="40"/>
         <image name="Number_back" width="30" height="30"/>
+        <image name="YesBtn" width="71" height="41"/>
     </resources>
 </document>

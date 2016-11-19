@@ -10,8 +10,13 @@
 
 @interface BetingBallTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *topColor;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
+@property (weak, nonatomic) IBOutlet UILabel *Odds;
 @property (weak, nonatomic) IBOutlet UIButton *NumberBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *odd1;
+
 +(instancetype)cellWithTableView:(UITableView *)tableView;
 
 @end

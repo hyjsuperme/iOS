@@ -16,5 +16,7 @@
 /**正在开奖记录*/
 @property (nonatomic, strong) NSArray *LoadData;
 
+@property (nonatomic, strong) NSMutableDictionary *WillOpen;
+
 
 @end

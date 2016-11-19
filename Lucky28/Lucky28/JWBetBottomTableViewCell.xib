@@ -26,6 +26,9 @@
                                 <state key="normal" title="-" backgroundImage="AddBox">
                                     <color key="titleColor" red="0.59994798898696899" green="0.60003453493118286" blue="0.59992057085037231" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="Timesclick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gvy-Zv-Gzb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxb-b5-pIc">
                                 <constraints>
@@ -35,6 +38,9 @@
                                 <state key="normal" title="+" backgroundImage="AddBox">
                                     <color key="titleColor" red="0.59994798898696899" green="0.60003453493118286" blue="0.59992057085037231" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="Timesclick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DE1-Wy-mRf"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" background="TextBox" translatesAutoresizingMaskIntoConstraints="NO" id="qQs-bv-Pbp">
                                 <constraints>
@@ -68,6 +74,9 @@
                                 <state key="normal" title="-" backgroundImage="AddBox">
                                     <color key="titleColor" red="0.59994798898696899" green="0.60003453493118286" blue="0.59992057085037231" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="StageClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hgt-jw-MfI"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" background="TextBox" translatesAutoresizingMaskIntoConstraints="NO" id="xni-8j-SeA">
                                 <constraints>
@@ -86,6 +95,9 @@
                                 <state key="normal" title="+" backgroundImage="AddBox">
                                     <color key="titleColor" red="0.59994798898696899" green="0.60003453493118286" blue="0.59992057085037231" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="StageClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NP0-ug-Z4R"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -135,7 +147,7 @@
                         <color key="textColor" red="0.59994798898696899" green="0.60003453493118286" blue="0.59992057085037231" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="共 10 注" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZz-90-Fya">
+                    <label opaque="NO" userInteractionEnabled="NO" tag="177" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="共 10 注" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZz-90-Fya">
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Aam-db-uFi"/>
                         </constraints>
@@ -151,7 +163,7 @@
                         <color key="textColor" red="0.6430816650390625" green="0.64317411184310913" blue="0.64305251836776733" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJ7-Ot-trk">
+                    <label opaque="NO" userInteractionEnabled="NO" tag="178" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJ7-Ot-trk">
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="GbP-yJ-Xce"/>
                         </constraints>
@@ -204,6 +216,12 @@
                     <constraint firstItem="CUT-1D-Vhr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="yea-oY-1To"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="Money" destination="aJ7-Ot-trk" id="f8x-Jz-rSl"/>
+                <outlet property="Number" destination="cZz-90-Fya" id="Hpw-Go-bE6"/>
+                <outlet property="stage" destination="xni-8j-SeA" id="Agf-5k-mqt"/>
+                <outlet property="times" destination="qQs-bv-Pbp" id="pfV-rL-qu8"/>
+            </connections>
             <point key="canvasLocation" x="34.5" y="65"/>
         </tableViewCell>
     </objects>

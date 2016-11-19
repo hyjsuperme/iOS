@@ -393,7 +393,42 @@
         betVC.historyData =responseObject[@"data"];
         //NSLog(@"历史记录%@",self.historyData);
         
-         [self.navigationController pushViewController:betVC animated:YES];
+        
+        AFHTTPSessionManager *manager1 =[AFHTTPSessionManager manager];
+        manager1.responseSerializer.acceptableContentTypes =[manager1.responseSerializer.acceptableContentTypes setByAddingObject:@"text/json"];
+        
+        NSMutableDictionary *parameters1 = [[NSMutableDictionary alloc]init];
+        NSString *url =[LOADINGURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+       
+        [parameters1 setObject:gametype forKey:@"type"];
+        //[parameters setObject:@"16938614" forKey:@"sn"];
+        
+       // NSLog(@"%@",gametype);
+        
+        
+        [manager1 POST:url parameters:parameters1 progress:^(NSProgress * _Nonnull uploadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSString *string =[NSString stringWithFormat:@"%@",responseObject[@"code"]];
+            if ([string isEqualToString:@"3002"]) {
+                NSLog(@"3002");
+            } else{
+                betVC.WillOpen =responseObject[@"data"];
+                [self.navigationController pushViewController:betVC animated:YES];
+            }
+                     NSLog(@"正在进行中%@",responseObject);
+           
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSLog(@"%@",error);
+            
+        }];
+        
+        
+        
+        
+       
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error);

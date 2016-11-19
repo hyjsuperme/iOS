@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface JWfootView : UIView
-
+@property (nonatomic, strong) UIButton *autoBet;
+@property (nonatomic, strong) UIButton *clearBet;
+@property (nonatomic, strong) UIButton *YesBet;
 @end

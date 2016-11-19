@@ -25,5 +25,38 @@
     // Initialization code
 }
 
+- (IBAction)Timesclick:(UIButton *)sender {
+    NSInteger timesN =[self.times.text integerValue];
+    if ([sender.currentTitle isEqualToString:@"-"]) {
+        timesN--;
+        if (timesN >=0) {
+            self.times.text = [NSString stringWithFormat:@"%ld",timesN];
+        }
+       
+    }else{
+        timesN++;
+        self.times.text = [NSString stringWithFormat:@"%ld",timesN];
+        NSLog(@"+++++%ld",timesN);
+      
+    }
+    NSNotificationCenter *center =[NSNotificationCenter defaultCenter];
+    [center postNotificationName:@"TimesAdd" object:self userInfo:@{@"TimesAdd":self.times.text}];
+    
+}
+- (IBAction)StageClick:(UIButton *)sender {
+    NSInteger stageN =[self.stage.text integerValue];
+    if ([sender.currentTitle isEqualToString:@"-"]) {
+        stageN--;
+        if (stageN >=0) {
+            self.stage.text = [NSString stringWithFormat:@"%ld",stageN];
+        }
+        
+    }else{
+        stageN++;
+        self.stage.text = [NSString stringWithFormat:@"%ld",stageN];
+       // NSLog(@"+++++%ld",stageN);
+    }
+}
+
 
 @end

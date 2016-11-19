@@ -20,11 +20,19 @@
 #import "UIView+JWExtension.h"
 #import "MJExtension.h"
 #import "AFNetworking.h"
+#import "NSString+JWExtesion.h"
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 /**开奖中心*/
-#define MAINURL @"http://app.28.com/"
-#define BETURL @"http://app.28.com/bet"
+#define MAINURL @"http://ios.28.com/"
+/**下注*/
+#define BETURL @"http://ios.28.com/bet"
+#define ODDSURL @"http://ios.28.com/bet/odds"
+#define LOADINGURL @"http://ios.28.com/bet/latest"
+#define USERBETLOG @"http://app.28.com/user/betlog"
+#define USERLOG @"http://app.28.com/bet/userlog"
+
+
 
 
 /*** 日志 ***/

@@ -11,9 +11,9 @@
 
 
 @interface JWBettingTableViewController : UITableViewController
-
-
-/**title*/
+/**游戏类型*/
 @property (nonatomic, strong) NSString *CityName;
+/**游戏类型*/
+@property (nonatomic, strong) NSArray *Odds;
 
 @end

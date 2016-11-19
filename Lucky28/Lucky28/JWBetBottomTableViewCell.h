@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface JWBetBottomTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UITextField *times;
+@property (weak, nonatomic) IBOutlet UITextField *stage;
+@property (weak, nonatomic) IBOutlet UILabel *Number;
+@property (weak, nonatomic) IBOutlet UILabel *Money;
 +(instancetype)cellWithTableView:(UITableView *)tableView;
 @end

@@ -9,6 +9,7 @@
 #import "JWTabBarController.h"
 #import "JWNavigationController.h"
 #import "JWTabBar.h"
+#import "JWBettingTableViewController.h"
 
 @interface JWTabBarController ()
 
@@ -33,7 +34,7 @@
     [item setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
     
     [self setUpOneChildViewController:[[JWNavigationController alloc]initWithRootViewController:[[HomeViewController alloc]init]] title:@"首页" image:@"" selectedImage:@""];
-    [self setUpOneChildViewController:[[JWNavigationController alloc]initWithRootViewController:[[GameCenterViewController alloc]init]] title:@"活动" image:@"" selectedImage:@""];
+    [self setUpOneChildViewController:[[JWNavigationController alloc]initWithRootViewController:[[JWBettingTableViewController alloc]init]] title:@"活动" image:@"" selectedImage:@""];
     [self setUpOneChildViewController:[[JWNavigationController alloc]initWithRootViewController:[[ListViewController alloc]init] ] title:@"排行榜" image:@"" selectedImage:@""];
     [self setUpOneChildViewController:[[JWNavigationController alloc]initWithRootViewController:[[ExpiryViewController alloc]init]] title:@"抽奖" image:@"" selectedImage:@""];
     [self setUpOneChildViewController:[[JWNavigationController alloc]initWithRootViewController:[[MyViewController alloc]init]] title:@"我的" image:@"" selectedImage:@""];
