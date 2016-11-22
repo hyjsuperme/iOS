@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -24,7 +25,7 @@
                                     <constraint firstAttribute="height" constant="32" id="kjm-0P-hAj"/>
                                 </constraints>
                                 <state key="normal" title="-" backgroundImage="AddBox">
-                                    <color key="titleColor" red="0.59994798898696899" green="0.60003453493118286" blue="0.59992057085037231" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.75862497091293335" green="0.31515461206436157" blue="0.27489358186721802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="Timesclick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gvy-Zv-Gzb"/>
@@ -36,7 +37,7 @@
                                     <constraint firstAttribute="height" constant="32" id="pKI-ds-70s"/>
                                 </constraints>
                                 <state key="normal" title="+" backgroundImage="AddBox">
-                                    <color key="titleColor" red="0.59994798898696899" green="0.60003453493118286" blue="0.59992057085037231" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.75862497091293335" green="0.31515461206436157" blue="0.27489358186721802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="Timesclick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DE1-Wy-mRf"/>
@@ -72,7 +73,7 @@
                                     <constraint firstAttribute="width" constant="30" id="Oaj-QB-LPi"/>
                                 </constraints>
                                 <state key="normal" title="-" backgroundImage="AddBox">
-                                    <color key="titleColor" red="0.59994798898696899" green="0.60003453493118286" blue="0.59992057085037231" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.75862497091293335" green="0.31515461206436157" blue="0.27489358186721802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="StageClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hgt-jw-MfI"/>
@@ -93,7 +94,7 @@
                                     <constraint firstAttribute="height" constant="32" id="v10-aa-LWo"/>
                                 </constraints>
                                 <state key="normal" title="+" backgroundImage="AddBox">
-                                    <color key="titleColor" red="0.59994798898696899" green="0.60003453493118286" blue="0.59992057085037231" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.75862497091293335" green="0.31515461206436157" blue="0.27489358186721802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="StageClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NP0-ug-Z4R"/>
@@ -155,12 +156,17 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账户余额：￥100 (金豆：100)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFZ-mi-j8L">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账户余额：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFZ-mi-j8L">
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="EbN-lK-537"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.6430816650390625" green="0.64317411184310913" blue="0.64305251836776733" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥100 (金豆：100)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORk-AE-rQH">
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.64308166499999997" green="0.64317411179999995" blue="0.64305251839999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" tag="178" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJ7-Ot-trk">
@@ -169,14 +175,6 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.8161359429359436" green="0.0073587675578892231" blue="0.10758308321237564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（账户余额不足，请充值）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HaF-Rh-qRg">
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="0b6-sj-UY3"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" red="0.79371136426925659" green="0.099714867770671844" blue="0.18262699246406555" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1m-3q-H32">
@@ -188,13 +186,21 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（账户余额不足，请充值）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HaF-Rh-qRg">
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.79371136426925659" green="0.099714867770671844" blue="0.18262699246406555" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.9293333888053894" green="0.92946380376815796" blue="0.92929238080978394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
+                    <constraint firstItem="HaF-Rh-qRg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" multiplier="1.7" id="0rZ-29-jHf"/>
                     <constraint firstItem="lY0-5v-D21" firstAttribute="leading" secondItem="CUT-1D-Vhr" secondAttribute="trailing" constant="5" id="48W-ud-xUC"/>
                     <constraint firstItem="cZz-90-Fya" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="4yK-s3-jce"/>
+                    <constraint firstItem="ORk-AE-rQH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" multiplier="1.7" id="9UP-9W-QZp"/>
                     <constraint firstAttribute="trailing" secondItem="ppg-yf-U4R" secondAttribute="trailing" constant="8" id="IXf-XS-moT"/>
                     <constraint firstItem="aoh-du-WMw" firstAttribute="leading" secondItem="wog-8r-fn2" secondAttribute="trailing" constant="5" id="LxA-rR-QKf"/>
+                    <constraint firstItem="HaF-Rh-qRg" firstAttribute="leading" secondItem="ORk-AE-rQH" secondAttribute="trailing" constant="10" id="Myh-GO-qK8"/>
                     <constraint firstItem="ppg-yf-U4R" firstAttribute="leading" secondItem="lY0-5v-D21" secondAttribute="trailing" constant="5" id="O8R-P7-KtX"/>
                     <constraint firstItem="P1m-3q-H32" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Sou-xi-EMG"/>
                     <constraint firstItem="wog-8r-fn2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Td8-kE-NMx"/>
@@ -204,25 +210,26 @@
                     <constraint firstItem="lY0-5v-D21" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="ceH-u1-oXf"/>
                     <constraint firstItem="ppg-yf-U4R" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="ci8-vM-RSe"/>
                     <constraint firstItem="aJ7-Ot-trk" firstAttribute="leading" secondItem="cZz-90-Fya" secondAttribute="trailing" constant="25" id="dUm-td-Har"/>
-                    <constraint firstItem="HaF-Rh-qRg" firstAttribute="top" secondItem="lY0-5v-D21" secondAttribute="bottom" constant="49" id="dsN-cs-Mfb"/>
                     <constraint firstItem="nHU-Qb-8wU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="f2i-LX-sNa"/>
+                    <constraint firstItem="ORk-AE-rQH" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.73" id="gja-uM-McL"/>
                     <constraint firstItem="aoh-du-WMw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="izU-pf-kCl"/>
                     <constraint firstItem="cZz-90-Fya" firstAttribute="top" secondItem="aoh-du-WMw" secondAttribute="bottom" constant="14" id="l5u-7e-F3x"/>
                     <constraint firstItem="P1m-3q-H32" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="mwI-v7-3gz"/>
                     <constraint firstItem="aJ7-Ot-trk" firstAttribute="top" secondItem="aoh-du-WMw" secondAttribute="bottom" constant="14" id="oYh-eV-yt5"/>
-                    <constraint firstItem="HaF-Rh-qRg" firstAttribute="leading" secondItem="MFZ-mi-j8L" secondAttribute="trailing" constant="10" id="q7e-IR-Np7"/>
                     <constraint firstItem="MFZ-mi-j8L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="tYO-wn-wg3"/>
                     <constraint firstItem="nHU-Qb-8wU" firstAttribute="leading" secondItem="aoh-du-WMw" secondAttribute="trailing" constant="5" id="xKV-eD-vni"/>
                     <constraint firstItem="CUT-1D-Vhr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="yea-oY-1To"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="Message" destination="HaF-Rh-qRg" id="6UQ-4Y-b56"/>
                 <outlet property="Money" destination="aJ7-Ot-trk" id="f8x-Jz-rSl"/>
                 <outlet property="Number" destination="cZz-90-Fya" id="Hpw-Go-bE6"/>
+                <outlet property="UserMoney" destination="ORk-AE-rQH" id="efy-id-zVG"/>
                 <outlet property="stage" destination="xni-8j-SeA" id="Agf-5k-mqt"/>
                 <outlet property="times" destination="qQs-bv-Pbp" id="pfV-rL-qu8"/>
             </connections>
-            <point key="canvasLocation" x="34.5" y="65"/>
+            <point key="canvasLocation" x="116.5" y="-59"/>
         </tableViewCell>
     </objects>
     <resources>

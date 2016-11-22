@@ -22,6 +22,14 @@
     [super awakeFromNib];
     // Initialization code
 }
+- (IBAction)TextEdit:(UITextField *)sender {
+    [sender resignFirstResponder];
+}
 
+- (IBAction)ShowHandClick:(UIButton *)sender {
+    
+    NSNotificationCenter *center =[NSNotificationCenter defaultCenter];
+    [center postNotificationName:@"ShowHandMoney" object:self userInfo:@{@"Money":self.MoneyTextField.text}];
+}
 
 @end

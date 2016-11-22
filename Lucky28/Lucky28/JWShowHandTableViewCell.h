@@ -17,7 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *Inverse;
 /**下注金额*/
 @property (weak, nonatomic) IBOutlet UILabel *SliderValue;
-
+/**定额梭哈金额*/
+@property (weak, nonatomic) IBOutlet UITextField *MoneyTextField;
 
 +(instancetype)cellWithTableView:(UITableView *)tableView;
 @end

@@ -16,6 +16,38 @@
                 <frame key="frameInset" width="375" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入下注金额" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rOJ-Jg-l0t">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="Ijd-TQ-MF2"/>
+                        </constraints>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbQ-J0-xAE">
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="10倍" backgroundImage="BetDefault">
+                            <color key="titleColor" red="0.76112180948257446" green="0.75659805536270142" blue="0.76460027694702148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <state key="disabled" backgroundImage="YesBtn"/>
+                        <state key="highlighted" backgroundImage="YesBtn"/>
+                        <state key="focused" backgroundImage="YesBtn"/>
+                        <connections>
+                            <action selector="OddsClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4c9-tm-MUJ"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEO-Su-ex7">
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="2倍" backgroundImage="BetDefault">
+                            <color key="titleColor" red="0.76112180948257446" green="0.75659805536270142" blue="0.76460027694702148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <state key="disabled" backgroundImage="YesBtn"/>
+                        <state key="highlighted" backgroundImage="YesBtn"/>
+                        <state key="focused" backgroundImage="YesBtn"/>
+                        <connections>
+                            <action selector="OddsClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cxW-t2-S8W"/>
+                        </connections>
+                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syY-C5-Qcz">
                         <constraints>
                             <constraint firstAttribute="height" constant="34" id="3wA-5p-UaF"/>
@@ -26,69 +58,16 @@
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入下注金额" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rOJ-Jg-l0t">
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="Ijd-TQ-MF2"/>
-                            <constraint firstAttribute="width" constant="75" id="Mly-6c-2s5"/>
-                        </constraints>
-                        <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PF9-kM-AY0">
-                        <constraints>
-                            <constraint firstAttribute="width" constant="40" id="sml-3M-hF4"/>
-                            <constraint firstAttribute="height" constant="30" id="xRn-TW-4wO"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title="0.1倍" backgroundImage="BetDefault">
-                            <color key="titleColor" red="0.76112180948257446" green="0.75659805536270142" blue="0.76460027694702148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </state>
-                        <state key="selected" backgroundImage="YesBtn"/>
-                        <connections>
-                            <action selector="OddsClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9Il-kd-HV9"/>
-                        </connections>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9up-rg-MvK">
-                        <constraints>
-                            <constraint firstAttribute="width" constant="40" id="Fp1-kr-ml6"/>
-                            <constraint firstAttribute="height" constant="30" id="R7z-4T-rZ1"/>
-                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="0.5倍" backgroundImage="BetDefault">
                             <color key="titleColor" red="0.76112180948257446" green="0.75659805536270142" blue="0.76460027694702148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
-                        <state key="selected" backgroundImage="YesBtn"/>
+                        <state key="disabled" backgroundImage="YesBtn"/>
+                        <state key="highlighted" backgroundImage="YesBtn"/>
+                        <state key="focused" backgroundImage="YesBtn"/>
                         <connections>
                             <action selector="OddsClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="sif-J4-eZc"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEO-Su-ex7">
-                        <constraints>
-                            <constraint firstAttribute="width" constant="40" id="IUn-wV-Tmy"/>
-                            <constraint firstAttribute="height" constant="30" id="s7n-cB-5ac"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title="2倍" backgroundImage="BetDefault">
-                            <color key="titleColor" red="0.76112180948257446" green="0.75659805536270142" blue="0.76460027694702148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </state>
-                        <state key="selected" backgroundImage="YesBtn"/>
-                        <connections>
-                            <action selector="OddsClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cxW-t2-S8W"/>
-                        </connections>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbQ-J0-xAE">
-                        <constraints>
-                            <constraint firstAttribute="width" constant="40" id="1he-mS-uFA"/>
-                            <constraint firstAttribute="height" constant="30" id="qOc-4U-BJg"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title="10倍" backgroundImage="BetDefault">
-                            <color key="titleColor" red="0.76112180948257446" green="0.75659805536270142" blue="0.76460027694702148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </state>
-                        <state key="selected" backgroundImage="YesBtn"/>
-                        <connections>
-                            <action selector="OddsClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4c9-tm-MUJ"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cG6-l9-cJ2">
@@ -110,30 +89,37 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="wbQ-J0-xAE" firstAttribute="top" secondItem="cG6-l9-cJ2" secondAttribute="bottom" constant="6" id="3h8-4d-29x"/>
+                    <constraint firstItem="rOJ-Jg-l0t" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.2" id="2fL-pM-YQE"/>
+                    <constraint firstItem="9up-rg-MvK" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.12" id="41h-cb-9kN"/>
                     <constraint firstItem="rOJ-Jg-l0t" firstAttribute="leading" secondItem="syY-C5-Qcz" secondAttribute="trailing" constant="6" id="6IF-et-PDz"/>
+                    <constraint firstItem="wbQ-J0-xAE" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.81" id="CKZ-9Q-mKb"/>
+                    <constraint firstItem="fEO-Su-ex7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="CgC-de-iEd"/>
                     <constraint firstAttribute="trailing" secondItem="cG6-l9-cJ2" secondAttribute="trailing" id="DFe-yb-sdu"/>
-                    <constraint firstItem="9up-rg-MvK" firstAttribute="leading" secondItem="PF9-kM-AY0" secondAttribute="trailing" constant="7" id="Lh9-Z0-2Gd"/>
-                    <constraint firstItem="PF9-kM-AY0" firstAttribute="top" secondItem="cG6-l9-cJ2" secondAttribute="bottom" constant="6" id="Rcu-Q3-TJC"/>
-                    <constraint firstItem="wbQ-J0-xAE" firstAttribute="leading" secondItem="fEO-Su-ex7" secondAttribute="trailing" constant="7" id="Tsw-Lh-pGB"/>
+                    <constraint firstItem="9up-rg-MvK" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.16" id="Elz-lx-IOi"/>
+                    <constraint firstItem="fEO-Su-ex7" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.47" id="UWy-BA-jXH"/>
+                    <constraint firstItem="9up-rg-MvK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Y1c-jj-BMk"/>
+                    <constraint firstItem="fEO-Su-ex7" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.69767" id="cGd-dB-RAd"/>
                     <constraint firstItem="syY-C5-Qcz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="dLn-5f-MS8"/>
                     <constraint firstItem="rOJ-Jg-l0t" firstAttribute="top" secondItem="cG6-l9-cJ2" secondAttribute="bottom" constant="6" id="eMq-Rh-4A9"/>
-                    <constraint firstItem="9up-rg-MvK" firstAttribute="top" secondItem="cG6-l9-cJ2" secondAttribute="bottom" constant="6" id="fzi-o5-n7g"/>
+                    <constraint firstItem="9up-rg-MvK" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.6976" id="h26-va-HcP"/>
                     <constraint firstItem="syY-C5-Qcz" firstAttribute="top" secondItem="cG6-l9-cJ2" secondAttribute="bottom" constant="4" id="h98-tW-Ta4"/>
                     <constraint firstItem="cG6-l9-cJ2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="kD3-R8-CTb"/>
-                    <constraint firstAttribute="trailing" secondItem="wbQ-J0-xAE" secondAttribute="trailing" constant="5" id="kKZ-41-cQ2"/>
-                    <constraint firstItem="hRt-QK-nqb" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.83" id="q1r-uY-zrb"/>
-                    <constraint firstItem="fEO-Su-ex7" firstAttribute="leading" secondItem="9up-rg-MvK" secondAttribute="trailing" constant="6" id="x7g-IC-hkJ"/>
+                    <constraint firstItem="wbQ-J0-xAE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="oDB-M8-j5v"/>
+                    <constraint firstItem="hRt-QK-nqb" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.79" id="q1r-uY-zrb"/>
+                    <constraint firstItem="fEO-Su-ex7" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.16" id="ssZ-sv-bRC"/>
                     <constraint firstItem="cG6-l9-cJ2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="y49-O0-IgK"/>
+                    <constraint firstItem="wbQ-J0-xAE" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.16" id="yHt-kc-buc"/>
+                    <constraint firstItem="wbQ-J0-xAE" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.69767" id="yzE-et-XYm"/>
                     <constraint firstItem="hRt-QK-nqb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zHr-Jn-gGB"/>
-                    <constraint firstItem="fEO-Su-ex7" firstAttribute="top" secondItem="cG6-l9-cJ2" secondAttribute="bottom" constant="6" id="zqG-ny-sZH"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
+                <outlet property="FourBtn" destination="wbQ-J0-xAE" id="S0b-Dk-Wq2"/>
                 <outlet property="NumberBtn" destination="syY-C5-Qcz" id="yP5-zL-c9j"/>
                 <outlet property="Odds" destination="hRt-QK-nqb" id="f5A-39-AfG"/>
-                <outlet property="odd1" destination="PF9-kM-AY0" id="oC0-N2-nWL"/>
+                <outlet property="SecondBtn" destination="9up-rg-MvK" id="Wfa-RH-BwK"/>
+                <outlet property="ThreeBtn" destination="fEO-Su-ex7" id="VoM-nS-eVK"/>
                 <outlet property="textField" destination="rOJ-Jg-l0t" id="wHv-Jf-yZN"/>
                 <outlet property="topColor" destination="cG6-l9-cJ2" id="9V8-BA-UAk"/>
             </connections>

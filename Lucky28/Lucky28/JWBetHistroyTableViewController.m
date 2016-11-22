@@ -96,7 +96,7 @@
     
    NSString *gametype =[NSString NmuberTogameType: self.title];
     [parameters setObject:gametype forKey:@"type"];//游戏类型
-    [parameters setObject:@"25474305" forKey:@"user_number"];//游戏期号
+    [parameters setObject:@"34260172" forKey:@"user_number"];//游戏期号
     [parameters setObject:self.stage forKey:@"sn"];
     
     // NSLog(@"%@ %@",gametype,mstring);
@@ -107,6 +107,8 @@
         
         VC.details =responseObject;
         VC.stage =self.stage;
+        VC.betArray =responseObject[@"data"][@"numbers"];
+        VC.title =self.title;
         [self.navigationController pushViewController:VC animated:YES];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

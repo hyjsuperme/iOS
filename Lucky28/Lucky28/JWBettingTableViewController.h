@@ -15,5 +15,8 @@
 @property (nonatomic, strong) NSString *CityName;
 /**游戏类型*/
 @property (nonatomic, strong) NSArray *Odds;
-
+/**游戏期号*/
+@property (nonatomic, strong) NSString *sn;
+/**用户金额*/
+@property (nonatomic, strong) NSString *userMoney;
 @end

@@ -330,12 +330,12 @@
         if (bettime > 0) {
            
             cell.EndStage.text =[NSString stringWithFormat:@"第%@期 剩余投注时间",stage];
-            [self startWithTime:bettime Time1:cell.Time1 Time2:cell.Time2 Time3:cell.time3 Time4:cell.Time4 No:1];
+            //[self startWithTime:bettime Time1:cell.Time1 Time2:cell.Time2 Time3:cell.time3 Time4:cell.Time4 No:1];
             NSLog(@"剩余投注时间%ld", bettime);
         } else if(bettime == 0 ){
            
             cell.EndStage.text =[NSString stringWithFormat:@"第%@期 剩余开奖时间",stage];
-             [self startWithTime:stoptime Time1:cell.Time1 Time2:cell.Time2 Time3:cell.time3 Time4:cell.Time4 No:2];
+           //  [self startWithTime:stoptime Time1:cell.Time1 Time2:cell.Time2 Time3:cell.time3 Time4:cell.Time4 No:2];
              NSLog(@"剩余投注时间%ld", stoptime);
         }
        ;
@@ -434,7 +434,41 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"参数：%@",responseObject);
         bettingVC.Odds =responseObject[@"data"][@"odds"];
-         [self.navigationController pushViewController:bettingVC animated:YES];
+        NSString *sn =[NSString stringWithFormat:@"%@",mstring];
+        bettingVC.sn =sn;
+        
+#warning ----------------------------------------------------
+        AFHTTPSessionManager *manager1 =[AFHTTPSessionManager manager];
+        manager1.responseSerializer.acceptableContentTypes =[manager1.responseSerializer.acceptableContentTypes setByAddingObject:@"text/json"];
+        
+        NSMutableDictionary *parameters1 = [[NSMutableDictionary alloc]init];
+        NSString *url1 =[CHIPSURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        [parameters1 setObject:@"34260172" forKey:@"user_number"];//游戏期号
+        
+       // NSLog(@"%@ %@",gametype1,mstring);
+        [manager1 POST:url1 parameters:parameters1 progress:^(NSProgress * _Nonnull uploadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            
+            
+            NSLog(@"参数：%@",responseObject);
+            bettingVC.userMoney =responseObject[@"data"];
+            [self.navigationController pushViewController:bettingVC animated:YES];
+            
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSLog(@"%@",error);
+            
+        }];
+        
+
+        
+        
+        
+        
+       
+        // [self.navigationController pushViewController:bettingVC animated:YES];
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

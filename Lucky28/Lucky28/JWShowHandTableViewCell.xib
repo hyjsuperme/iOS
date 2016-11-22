@@ -60,11 +60,24 @@
                             <constraint firstAttribute="height" constant="48" id="NeX-GO-TiS"/>
                             <constraint firstAttribute="width" constant="80" id="yay-tb-R9J"/>
                         </constraints>
-                        <state key="normal" title="全额梭哈" backgroundImage="BetBox">
+                        <state key="normal" title="定额梭哈" backgroundImage="BetBox">
                             <color key="titleColor" red="0.62347543239593506" green="0.62356525659561157" blue="0.6234472393989563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <state key="selected" backgroundImage="DoneButton"/>
+                        <connections>
+                            <action selector="ShowHandClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uJq-yb-9Fh"/>
+                        </connections>
                     </button>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入金额" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZE5-uu-A03">
+                        <frame key="frameInset" minX="18" minY="74" width="110" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <action selector="TextEdit:" destination="KGk-i7-Jjw" eventType="editingDidEndOnExit" id="28W-ei-2qb"/>
+                        </connections>
+                    </textField>
                 </subviews>
                 <color key="backgroundColor" red="0.96070355176925659" green="0.96083801984786987" blue="0.96066111326217651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
@@ -75,9 +88,9 @@
                     <constraint firstItem="MfU-W1-g7Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="IhI-fh-NX5"/>
                     <constraint firstItem="Rt2-ae-w03" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="L9I-QD-Lt3"/>
                     <constraint firstAttribute="trailing" secondItem="Rt2-ae-w03" secondAttribute="trailing" id="NN7-F2-MVn"/>
-                    <constraint firstItem="vrU-Iq-Tbz" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="0.83" id="RKJ-SX-0AS"/>
+                    <constraint firstItem="vrU-Iq-Tbz" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="RKJ-SX-0AS"/>
                     <constraint firstAttribute="bottomMargin" secondItem="P2H-kJ-1dq" secondAttribute="bottom" constant="6" id="VDm-iv-cSj"/>
-                    <constraint firstItem="P2H-kJ-1dq" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.34" id="YYU-lb-kme"/>
+                    <constraint firstItem="P2H-kJ-1dq" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.5" id="YYU-lb-kme"/>
                     <constraint firstItem="pEY-WL-1MY" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.08" id="Z49-P1-RTC"/>
                     <constraint firstItem="Duj-MT-eUP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="oO0-JG-zSr"/>
                     <constraint firstItem="Rt2-ae-w03" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pWy-Ho-RaS"/>
@@ -85,11 +98,12 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="Inverse" destination="P2H-kJ-1dq" id="nn9-Lj-Xmz"/>
+                <outlet property="MoneyTextField" destination="ZE5-uu-A03" id="nhq-KT-sam"/>
                 <outlet property="ShowHand" destination="vrU-Iq-Tbz" id="9Bx-FV-hcj"/>
                 <outlet property="ShowHandSlider" destination="pEY-WL-1MY" id="dha-oQ-VbZ"/>
                 <outlet property="SliderValue" destination="MfU-W1-g7Q" id="CV3-yt-SNt"/>
             </connections>
-            <point key="canvasLocation" x="33.5" y="53.5"/>
+            <point key="canvasLocation" x="32.5" y="32.5"/>
         </tableViewCell>
     </objects>
     <resources>

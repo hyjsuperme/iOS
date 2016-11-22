@@ -8,6 +8,7 @@
 
 #import "JWBetBetailsTableViewController.h"
 #import "JWBetBetailsTableViewCell.h"
+#import "JWModelDateilsTableViewCell.h"
 
 @interface JWBetBetailsTableViewController ()
 
@@ -15,9 +16,15 @@
 
 @implementation JWBetBetailsTableViewController
 
+- (NSArray *)betArray{
+    if (!_betArray) {
+        _betArray =[NSArray array];
+    }
+    return _betArray;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.tableView.separatorStyle =UITableViewCellSelectionStyleNone;
 
 }
 
@@ -27,101 +34,60 @@
 }
 
 
-
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return 1;
+    if (section==0) return 1;
+    if (section==1) return self.betArray.count;
+    return 2;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath { 
-    JWBetBetailsTableViewCell *cell =[JWBetBetailsTableViewCell cellWithTableView:tableView];
-    cell.GameType.text =self.title;//游戏类型
-    NSString *code =[NSString stringWithFormat:@"%@",self.details[@"code"]];
-
-    if ([code isEqualToString:@"0000"]) {
-        cell.YesOrNo.image =[UIImage imageNamed:@"YesImage"];
-        cell.Success.text =@"投注成功";
-    }else{
-        cell.YesOrNo.image =[UIImage imageNamed:@""];
-        cell.Success.text =@"投注失败";
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        JWBetBetailsTableViewCell *cell =[JWBetBetailsTableViewCell cellWithTableView:tableView];
+        
+        cell.GameType.text =self.title;//游戏类型
+        NSString *code =[NSString stringWithFormat:@"%@",self.details[@"code"]];
+        
+        if ([code isEqualToString:@"0000"]) {
+            cell.YesOrNo.image =[UIImage imageNamed:@"YesImage"];
+            cell.Success.text =@"投注成功";
+        }else{
+            cell.YesOrNo.image =[UIImage imageNamed:@""];
+            cell.Success.text =@"投注失败";
+        }
+        
+        //   cell.OpenNumber  是否开奖
+        cell.Stage.text =[NSString stringWithFormat:@"%@期",self.stage];
+        cell.BetMoney.text =[NSString stringWithFormat:@"%@",self.details[@"data"][@"bet"]];
+        cell.Time.text =[NSString stringWithFormat:@"%@",self.details[@"data"][@"opentime"]];
+        cell.FirstNumber.text =[NSString stringWithFormat:@"%@",self.details[@"data"][@"openno"][0]];
+        cell.SecondNumber.text =[NSString stringWithFormat:@"%@",self.details[@"data"][@"openno"][1]];
+        cell.ThreeNumber.text =[NSString stringWithFormat:@"%@",self.details[@"data"][@"openno"][2]];
+        cell.Sum.text =[NSString stringWithFormat:@"%@",self.details[@"data"][@"final"]];
+        
+        return cell;
     }
-    
-//   cell.OpenNumber  是否开奖
-    cell.Stage.text =[NSString stringWithFormat:@"%@期",self.stage];
-    cell.BetMoney.text =[NSString stringWithFormat:@"%@",self.details[@"bet"]];
-    cell.Time.text =[NSString stringWithFormat:@"%@",self.details[@"opentime"]];
-    cell.FirstNumber.text =[NSString stringWithFormat:@"%@",self.details[@"openno"][0]];
-    cell.SecondNumber.text =[NSString stringWithFormat:@"%@",self.details[@"openno"][1]];
-    cell.ThreeNumber.text =[NSString stringWithFormat:@"%@",self.details[@"openno"][2]];
-    cell.Sum.text =[NSString stringWithFormat:@"%@",self.details[@"final"]];
-  
-    
+    if (indexPath.section == 1){
+        JWModelDateilsTableViewCell *cell =[JWModelDateilsTableViewCell cellWithTableView:tableView];
+        cell.Number.text =[NSString stringWithFormat:@"%@",self.details[@"data"][@"numbers"][indexPath.row][@"bet_number"]];
+        cell.odd.text =[NSString stringWithFormat:@"x%@",self.details[@"data"][@"numbers"][indexPath.row][@"odd_opened"]];
+        cell.Money.text =[NSString stringWithFormat:@"%@",self.details[@"data"][@"numbers"][indexPath.row][@"bet"]];
+        cell.WinOrLoseMoney.text =[NSString stringWithFormat:@"%@",self.details[@"data"][@"won"]];
+        return cell;
+    }
+    return 0;
    
-    
-    return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 430;
+    if (indexPath.section == 0) {
+         return 430;
+    } else{
+        return 43;
+    }
+   
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Table view delegate
-
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

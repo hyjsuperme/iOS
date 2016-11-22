@@ -11,5 +11,6 @@
 @interface JWBetBetailsTableViewController : UITableViewController
 @property (nonatomic, strong) NSDictionary *details;
 @property (nonatomic, strong) NSString *stage;
+@property (nonatomic, strong) NSArray *betArray;
 
 @end

@@ -27,10 +27,18 @@
 #define MAINURL @"http://ios.28.com/"
 /**下注*/
 #define BETURL @"http://ios.28.com/bet"
+/**赔率*/
 #define ODDSURL @"http://ios.28.com/bet/odds"
+/**最新的期号*/
 #define LOADINGURL @"http://ios.28.com/bet/latest"
-#define USERBETLOG @"http://app.28.com/user/betlog"
-#define USERLOG @"http://app.28.com/bet/userlog"
+/**玩家投注记录表*/
+#define USERBETLOG @"http://ios.28.com/user/betlog"
+/**具体期数的记录*/
+#define USERLOG @"http://ios.28.com/bet/userlog"
+/**立即投注*/
+#define BETINGURL @"http://ios.28.com/bet/beting"
+
+#define CHIPSURL @"http://ios.28.com/user/chips"
 
 
 

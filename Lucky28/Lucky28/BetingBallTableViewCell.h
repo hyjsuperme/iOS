@@ -15,8 +15,16 @@
 @property (weak, nonatomic) IBOutlet UILabel *Odds;
 @property (weak, nonatomic) IBOutlet UIButton *NumberBtn;
 
-@property (weak, nonatomic) IBOutlet UIButton *odd1;
 
+
+/**0.5倍*/
+@property (weak, nonatomic) IBOutlet UIButton *SecondBtn;
+/**2倍*/
+@property (weak, nonatomic) IBOutlet UIButton *ThreeBtn;
+/**10倍*/
+@property (weak, nonatomic) IBOutlet UIButton *FourBtn;
+
+@property (nonatomic, strong) NSMutableDictionary *MoneyDic;
 +(instancetype)cellWithTableView:(UITableView *)tableView;
 
 @end

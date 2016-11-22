@@ -15,7 +15,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
     NSLog(@"投注金额%@",self.textField.text);
 }
 
@@ -29,18 +29,27 @@
     return cell;
 }
 - (IBAction)OddsClick:(UIButton *)sender {
-    sender.selected =YES;
-    self.selectedBtn.selected =NO;
-    self.selectedBtn =sender;
+//    [self.SecondBtn setBackgroundImage:[UIImage imageNamed:@"YesBtn"] forState:UIControlStateHighlighted];
+//    [self.ThreeBtn setBackgroundImage:[UIImage imageNamed:@"YesBtn"] forState:UIControlStateHighlighted];
+//    [self.FourBtn setBackgroundImage:[UIImage imageNamed:@"YesBtn"] forState:UIControlStateHighlighted];
+//    sender.selected =YES;
+//    if (sender == self.selectedBtn) {
+//        return;
+//    }
+//    self.selectedBtn.selected =NO;
+//    self.selectedBtn =sender;
     NSMutableString *string =[NSMutableString stringWithString:sender.currentTitle];
     [string deleteCharactersInRange:NSMakeRange(sender.currentTitle.length-1,1)];
     float odd = [string floatValue];
     float money =[self.textField.text integerValue] *odd;
-    if (money <=1) {
-        self.textField.text =@"1";
-    }else{
-        self.textField.text =[NSString stringWithFormat:@"%ld",(NSInteger)money];
+
+    if (money <1.0) {
+        money =1;
     }
+        NSNotificationCenter *center =[NSNotificationCenter defaultCenter];
+        [center postNotificationName:@"BetMoney" object:self userInfo:@{@"Money":[NSString stringWithFormat:@"%ld",(NSInteger)money] ,@"Number":self.NumberBtn.currentTitle}];
+   
+   
   
 }
 

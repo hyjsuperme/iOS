@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *stage;
 @property (weak, nonatomic) IBOutlet UILabel *Number;
 @property (weak, nonatomic) IBOutlet UILabel *Money;
+@property (weak, nonatomic) IBOutlet UILabel *UserMoney;
+@property (weak, nonatomic) IBOutlet UILabel *Message;
 +(instancetype)cellWithTableView:(UITableView *)tableView;
 @end
