@@ -44,8 +44,40 @@
     return 0;
 }
 
-//+ (NSString *)CodeForType:(NSInteger *)code{
-//    
-//    
-//}
++ (NSString *)CodeForType:(NSString *)code{
+     
+    if ([code isEqualToString:@"1112"]) {
+        
+        return @"11";
+    } else if ([code isEqualToString:@"1116"]){
+        return @"11";
+    }else if ([code isEqualToString:@"1118"]){
+        return @"11";
+    }else if ([code isEqualToString:@"1612"]){
+        return @"16";
+    }else if ([code isEqualToString:@"1616"]){
+        return @"16";
+    }else if ([code isEqualToString:@"1618"]){
+        return @"16";
+    }else if ([code isEqualToString:@"2810"]){
+        return @"28";
+    }else if ([code isEqualToString:@"2812"]){
+        return @"28";
+    }else if ([code isEqualToString:@"2816"]){
+        return @"28";
+    }else if ([code isEqualToString:@"2818"]){
+        return @"28";
+    }else if ([code isEqualToString:@"3610"]){
+        return @"5";
+    }else if ([code isEqualToString:@"3612"]){
+        return @"5";
+    }else if ([code isEqualToString:@"3616"]){
+        return @"5";
+    }else if ([code isEqualToString:@"3618"]){
+        return @"5";
+    }
+    return 0;
+
+    
+}
 @end

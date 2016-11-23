@@ -284,6 +284,7 @@
             UILabel *label =[cell viewWithTag:j];
            // NSLog(@"Tag:%ld",label.tag);
             float odd =[self.Odds[i] floatValue];
+            NSLog(@"%d",i);
             label.text =[NSString stringWithFormat:@"%0.2f",odd];;
         }
         
@@ -545,7 +546,11 @@
 //自定义样式
 - (void)popMyView:(UIButton *)sender{
     self.MyModelAleartView =[[JWMyModelPopView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    NSString *str =[NSString NmuberTogameType:self.title];
+    NSNotificationCenter *center =[NSNotificationCenter defaultCenter];
+    [center postNotificationName:@"ModelPop" object:self userInfo:@{@"ModelPop":str}];
     [self.MyModelAleartView show];
+    
     
 }
 //弹窗消失

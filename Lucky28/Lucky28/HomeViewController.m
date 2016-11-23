@@ -391,7 +391,7 @@
         betVC.cityName =gameType;
        
         betVC.historyData =responseObject[@"data"];
-        //NSLog(@"历史记录%@",self.historyData);
+        NSLog(@"历史记录%@",responseObject);
         
         
         AFHTTPSessionManager *manager1 =[AFHTTPSessionManager manager];
@@ -421,7 +421,7 @@
            
             
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            NSLog(@"%@",error);
+            NSLog(@"错误❎%@",error);
             
         }];
         

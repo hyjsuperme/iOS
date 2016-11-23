@@ -39,6 +39,9 @@
 #define BETINGURL @"http://ios.28.com/bet/beting"
 
 #define CHIPSURL @"http://ios.28.com/user/chips"
+/**玩家投注模式列表*/
+#define INDEXURL @"http://ios.28.com/betmode/index"
+
 
 
 

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface JWMyModelPopView : UIWindow
+@property (nonatomic ,strong) NSMutableArray* ModelArray;
+@property (nonatomic, strong) NSString *Style;
 - (void)show;
 @end

@@ -330,12 +330,12 @@
         if (bettime > 0) {
            
             cell.EndStage.text =[NSString stringWithFormat:@"第%@期 剩余投注时间",stage];
-            //[self startWithTime:bettime Time1:cell.Time1 Time2:cell.Time2 Time3:cell.time3 Time4:cell.Time4 No:1];
+//            [self startWithTime:bettime Time1:cell.Time1 Time2:cell.Time2 Time3:cell.time3 Time4:cell.Time4 No:1];
             NSLog(@"剩余投注时间%ld", bettime);
         } else if(bettime == 0 ){
            
             cell.EndStage.text =[NSString stringWithFormat:@"第%@期 剩余开奖时间",stage];
-           //  [self startWithTime:stoptime Time1:cell.Time1 Time2:cell.Time2 Time3:cell.time3 Time4:cell.Time4 No:2];
+//             [self startWithTime:stoptime Time1:cell.Time1 Time2:cell.Time2 Time3:cell.time3 Time4:cell.Time4 No:2];
              NSLog(@"剩余投注时间%ld", stoptime);
         }
        ;

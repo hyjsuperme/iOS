@@ -20,6 +20,7 @@
 		194053C11DBF4D6F00E6E541 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 194053C01DBF4D6F00E6E541 /* HomeViewController.m */; };
 		194083EC1DC99BAE0063619A /* JWBetDefaultPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 194083EB1DC99BAE0063619A /* JWBetDefaultPopViewController.m */; };
 		194083F51DC9AA110063619A /* BetDefaultPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 194083F41DC9AA110063619A /* BetDefaultPopView.m */; };
+		1941C5B71DE53A2700A79A8C /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 1941C5B61DE53A2700A79A8C /* Foundation+Log.m */; };
 		195277F51DDED4FD00929301 /* JWBetBetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 195277F31DDED4FD00929301 /* JWBetBetailsTableViewController.m */; };
 		195277F61DDED4FD00929301 /* JWBetBetailsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 195277F41DDED4FD00929301 /* JWBetBetailsTableViewController.xib */; };
 		195277FA1DE016EC00929301 /* JWBetBetailsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 195277F81DE016EC00929301 /* JWBetBetailsTableViewCell.m */; };
@@ -147,6 +148,7 @@
 		194083EB1DC99BAE0063619A /* JWBetDefaultPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWBetDefaultPopViewController.m; sourceTree = "<group>"; };
 		194083F31DC9AA110063619A /* BetDefaultPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetDefaultPopView.h; sourceTree = "<group>"; };
 		194083F41DC9AA110063619A /* BetDefaultPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetDefaultPopView.m; sourceTree = "<group>"; };
+		1941C5B61DE53A2700A79A8C /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		195277F21DDED4FD00929301 /* JWBetBetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWBetBetailsTableViewController.h; sourceTree = "<group>"; };
 		195277F31DDED4FD00929301 /* JWBetBetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWBetBetailsTableViewController.m; sourceTree = "<group>"; };
 		195277F41DDED4FD00929301 /* JWBetBetailsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JWBetBetailsTableViewController.xib; sourceTree = "<group>"; };
@@ -685,6 +687,7 @@
 				5B8C79881DBE0C3D00DCB45B /* PrefixHeader.pch */,
 				19CC0AC01DDC4B29000728C4 /* NSString+JWExtesion.h */,
 				19CC0AC11DDC4B29000728C4 /* NSString+JWExtesion.m */,
+				1941C5B61DE53A2700A79A8C /* Foundation+Log.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -958,6 +961,7 @@
 				19730EA31DC1EEE7007D53E7 /* NSObject+MJKeyValue.m in Sources */,
 				5B8C794B1DBDFCA200DCB45B /* main.m in Sources */,
 				19730ED01DC1EEED007D53E7 /* UIButton+WebCache.m in Sources */,
+				1941C5B71DE53A2700A79A8C /* Foundation+Log.m in Sources */,
 				19CC0AC21DDC4B29000728C4 /* NSString+JWExtesion.m in Sources */,
 				19730E9D1DC1EEE7007D53E7 /* MJIvar.m in Sources */,
 				1956EC3E1DD4498100AC8118 /* JWMyModelPopView.m in Sources */,

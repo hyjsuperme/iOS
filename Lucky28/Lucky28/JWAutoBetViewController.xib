@@ -94,18 +94,24 @@
                     <frame key="frameInset" minX="116" minY="379" width="120" height="40"/>
                     <autoresizingMask key="autoresizingMask"/>
                 </imageView>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Jianto" translatesAutoresizingMaskIntoConstraints="NO" id="l5j-uv-H9T">
-                    <frame key="frameInset" minX="212" minY="394" width="14" height="11"/>
-                    <autoresizingMask key="autoresizingMask"/>
-                </imageView>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="AutoBox" translatesAutoresizingMaskIntoConstraints="NO" id="MLb-Ku-bFt">
                     <frame key="frameInset" minX="116" minY="455" width="120" height="40"/>
                     <autoresizingMask key="autoresizingMask"/>
                 </imageView>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Jianto" translatesAutoresizingMaskIntoConstraints="NO" id="Imm-WE-VrQ">
-                    <frame key="frameInset" minX="212" minY="470" width="14" height="11"/>
-                    <autoresizingMask key="autoresizingMask"/>
-                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q7d-df-Uvp">
+                    <frame key="frameInset" minX="116" minY="379" width="120" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jhW-IQ-SvL">
+                    <frame key="frameInset" minX="116" minY="455" width="120" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <point key="canvasLocation" x="34.5" y="54.5"/>
