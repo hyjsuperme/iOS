@@ -78,6 +78,19 @@
     }
     return 0;
 
+}
++ (NSString*)Game36:(NSString *)name{
+    if ([name isEqualToString:@"豹"]) {
+    return @"5";
+    } else if([name isEqualToString:@"顺"]){
+      return @"7";
+    }else if([name isEqualToString:@"对"]){
+        return @"9";
+    }else if([name isEqualToString:@"半"]){
+        return @"11";
+    }else {
+        return @"13";
+    }
     
 }
 @end

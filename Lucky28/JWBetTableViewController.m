@@ -432,7 +432,7 @@
     [manager POST:url parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"参数：%@",responseObject);
+        NSLog(@"😁参数：%@",responseObject);
         bettingVC.Odds =responseObject[@"data"][@"odds"];
         NSString *sn =[NSString stringWithFormat:@"%@",mstring];
         bettingVC.sn =sn;

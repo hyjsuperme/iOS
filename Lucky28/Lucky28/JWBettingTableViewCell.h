@@ -39,6 +39,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *Bet27;
 @property (weak, nonatomic) IBOutlet UIButton *Bet28;
 
+/**赔率个数*/
+@property (nonatomic, assign) NSInteger oddsCount;
 @property (nonatomic, strong) NSArray *betArray;
 
 +(instancetype)cellWithTableView:(UITableView *)tableView;

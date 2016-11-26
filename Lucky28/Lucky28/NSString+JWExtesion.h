@@ -11,4 +11,5 @@
 @interface NSString (JWExtesion)
 + (NSString *)NmuberTogameType:(NSString *)gametype;
 + (NSString *)CodeForType:(NSString *)code;
++ (NSString *)Game36: (NSString *)name;
 @end

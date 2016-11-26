@@ -42,6 +42,11 @@
 /**玩家投注模式列表*/
 #define INDEXURL @"http://ios.28.com/betmode/index"
 
+#define CREATEURL @"http://ios.28.com/bet-mode/create"
+#define DELETEURL @"http://ios.28.com/bet-mode/delete"
+
+
+
 
 
 

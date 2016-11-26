@@ -43,12 +43,22 @@
 
 @property (nonatomic, strong) UIAlertController *alertVc;
 
+@property (nonatomic, assign) float sliderValue;
+@property (nonatomic, assign) NSInteger sliderMoney;
 
-
+@property (nonatomic, strong) NSString *message;
+@property (nonatomic, strong) NSArray *arry36;
+@property (nonatomic, assign) NSInteger MaxNumber;
 
 @end
 
 @implementation JWBettingTableViewController
+- (NSArray *)arry36{
+    if (!_arry36) {
+        _arry36 =[NSArray arrayWithObjects:@"豹",@"顺",@"对",@"半",@"杂", nil];
+    }
+    return _arry36;
+}
 //每一个下注金额
 - (NSMutableArray *)eventBetMoney{
     if (!_eventBetMoney) {
@@ -142,7 +152,7 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"成功：%@",responseObject);
         NSString *string =responseObject[@"message"];
-        
+        self.message =string;
      self.alertVc =[UIAlertController alertControllerWithTitle:@"提示" message:string preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *ok =[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self hiddenView];
@@ -158,7 +168,10 @@
 }
 - (void)hiddenView{
     [self.alertVc dismissViewControllerAnimated:YES completion:nil];
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([self.message isEqualToString:@"恭喜您投注成功"]) {
+         [self.navigationController popViewControllerAnimated:YES];
+    }
+   
 }
 - (void)ShowHandMoney:(NSNotification *)Noti{//定额梭哈
     
@@ -220,9 +233,14 @@
     self.sum = 0;
     self.sumTime =0;
     self.ShowHansMoney=0;
+    [self.MoneyDic removeAllObjects];
+    [self.MoneyDic1 removeAllObjects];
+    self.sliderValue =0.0;
+    self.sliderMoney =0;
     [self.tableView reloadData];
 }
-- (void)rightClick{
+- (void)rightClick{  //投注记录
+    
     JWBetHistroyTableViewController *histroyTVC =[JWBetHistroyTableViewController alloc];
     AFHTTPSessionManager *manager =[AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes =[manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/json"];
@@ -232,15 +250,15 @@
     
     NSString *gametype =[NSString NmuberTogameType: self.CityName];
     [parameters setObject:gametype forKey:@"type"];//游戏类型
-    [parameters setObject:@"34260172" forKey:@"user_number"];//游戏期号
+    [parameters setObject:@"34260172" forKey:@"user_number"];//用户ID
     [parameters setObject:@"1" forKey:@"page"];
     
-   // NSLog(@"%@ %@",gametype,mstring);
+//    NSLog(@"%@ %@",gametype,mstring);
     [manager POST:url parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"参数：%@",responseObject);
-        histroyTVC.betLogArray =responseObject[@"data"];
+        histroyTVC.betLogArray =responseObject[@"data"][@"logs"];
         [self.navigationController pushViewController:histroyTVC animated:YES];
         histroyTVC.title =self.title;
         
@@ -277,18 +295,56 @@
     }
     else if (indexPath.section == 1 && indexPath.row ==0){
         JWBettingTableViewCell *cell =[JWBettingTableViewCell cellWithTableView:tableView];
+        cell.oddsCount =self.Odds.count;//个数
          cell.selectionStyle =UITableViewCellSelectionStyleNone;
          cell.betArray =self.betArray;
-        for (int i=0; i<self.Odds.count; i++) {
-            NSInteger j =121+i;
-            UILabel *label =[cell viewWithTag:j];
-           // NSLog(@"Tag:%ld",label.tag);
-            float odd =[self.Odds[i] floatValue];
-            NSLog(@"%d",i);
-            label.text =[NSString stringWithFormat:@"%0.2f",odd];;
+        
+        if (self.Odds.count == 5) {//当游戏类型为36的时候
+            for (int i =0; i<28; i++) {
+                 UIButton *button =[cell viewWithTag:(i+1)*100];
+                if (i == 5 || i == 7 || i == 9 || i== 11 || i == 13) {
+                    UILabel *label =[cell viewWithTag:i+121];
+                    float odd =[self.Odds[(i-5)/2] floatValue];
+                     label.text =[NSString stringWithFormat:@"%0.2f",odd];//赔率
+                    [button setTitle:self.arry36[(i-5)/2] forState:UIControlStateNormal];//号码
+                    
+                } else{
+                    [button removeFromSuperview];
+                }
+            }
+        }
+        
+      
+        
+        NSString *Number;
+        if (self.Odds.count !=5) {//当游戏类型为16、11
+            for (int i=0; i<self.Odds.count; i++) {
+                NSInteger j =121+i;
+                UILabel *label =[cell viewWithTag:j];
+                float odd =[self.Odds[i] floatValue];
+                label.text =[NSString stringWithFormat:@"%0.2f",odd];
+                UIButton *button =[cell viewWithTag:(i+1)*100];
+                
+                if (self.Odds.count == 11) {
+                    Number =[NSString stringWithFormat:@"%d",i+2];
+                    [button setTitle:Number forState:UIControlStateNormal];
+                } else if (self.Odds.count ==16){
+                    Number =[NSString stringWithFormat:@"%d",i+3];
+                    [button setTitle:Number forState:UIControlStateNormal];
+                }
+                
+            }
+            if (self.Odds.count <28) {
+                for (int j =(int)self.Odds.count; j<28; j++) {
+                    UIButton *button =[cell viewWithTag:(j+1)*100];
+                    [button removeFromSuperview];
+                }
+            }
+            
         }
         
      
+        
         
         return cell;
     }
@@ -299,9 +355,9 @@
         UIImage *setRigth =[UIImage imageNamed:@"sliderLine"];
         //滑动块图片
         UIImage *thumbImage =[UIImage imageNamed:@"sliderBall"];
-         cell.ShowHandSlider.value =0.50;
+         cell.ShowHandSlider.value =self.sliderValue;
          cell.ShowHandSlider.backgroundColor =[UIColor clearColor];
-         cell.ShowHandSlider.value =0.5;
+         //cell.ShowHandSlider.value =0.5;
          cell.ShowHandSlider.minimumValue =0.0;
          cell.ShowHandSlider.maximumValue =1.0;
         [cell.ShowHandSlider setMinimumTrackImage:setLeft forState:UIControlStateNormal];
@@ -314,6 +370,7 @@
         [cell.Inverse addTarget:self action:@selector(inverseClick:) forControlEvents:UIControlEventTouchUpInside];
         cell.MoneyTextField.text =[NSString stringWithFormat:@"%ld",self.ShowHansMoney];
         cell.MoneyTextField.keyboardType =UIKeyboardTypeNumberPad;
+        cell.SliderValue.text = [NSString stringWithFormat:@"(%ld)",self.sliderMoney];
         return cell;
     }
     
@@ -336,18 +393,34 @@
     }else if(indexPath.section == 3 ){
         
         BetingBallTableViewCell *cell =[BetingBallTableViewCell cellWithTableView:tableView];
-        
+        cell.oddsCount =self.Odds.count;
+        NSString *str =self.betArray[indexPath.row];
+        NSString *strOdds =self.oddsArray[indexPath.row];//赔率
+        NSString *game36;
         cell.selectionStyle =UITableViewCellSelectionStyleNone;
-        [cell.NumberBtn setTitle:self.betArray[indexPath.row] forState:UIControlStateNormal];//选中号码
-        NSString *string =self.oddsArray[indexPath.row];//赔率
-        cell.Odds.text =string;//赔率
-        NSString *moneyStr =[self.MoneyDic objectForKey:cell.NumberBtn.currentTitle];
-        if (self.ShowHansMoney) {
+        if (self.Odds.count == 5) {
+            if ([str integerValue] ==5) {
+                game36 =@"豹";
+            } else if ([str integerValue] ==7){
+                game36 =@"顺";
+            }else if ([str integerValue] ==9){
+                game36 =@"对";
+            }else if ([str integerValue] ==11){
+                game36 =@"半";
+            }else if ([str integerValue] ==13){
+                game36 =@"杂";
+            }
+             [cell.NumberBtn setTitle:game36 forState:UIControlStateNormal];
+        } else{
+             [cell.NumberBtn setTitle:str forState:UIControlStateNormal];//选中号码
             
         }
-        //float ShowHMoney = (float)self.ShowHansMoney/self.sumTime;
+        NSString *moneyStr =[self.MoneyDic objectForKey:str];
         NSInteger money= [moneyStr integerValue] *(self.times +1);
         cell.textField.text = [NSString stringWithFormat:@"%ld",money];
+        cell.Odds.text =strOdds;//赔率
+       
+        
         
        
         
@@ -366,57 +439,83 @@
     [self.view endEditing:YES];
 }
 - (void)changeValue:(UISlider *)slider{//滑动滚动条
+    NSLog(@"111+%ld",self.sum);
     UILabel *label =[self.view viewWithTag:511];
-    label.text =[NSString stringWithFormat:@"(%0.2f)",slider.value];
+    NSInteger money =slider.value *[self.userMoney integerValue];
+    label.text =[NSString stringWithFormat:@"%ld",money];
     UIButton *button =[self.view viewWithTag:531];
     button.selected =NO;
+    self.sliderMoney =money;
+   
     
-    if ( (int)slider.value == 1) {
-        button.selected =YES;
-    }
+
+        NSInteger betMoney;
+        NSString *betMoneyStr;
+        self.sumTime =0;
+        self.sliderValue =slider.value;
+        float showHand =(float)money/self.sum;//倍数
+            for (int i = 0; i<self.betArray.count; i++) {
+            betMoney =[[self.MoneyDic1 valueForKey:self.betArray[i]] integerValue] *showHand;//获取选中号码对应的金额，并修改
+            betMoneyStr =[NSString stringWithFormat:@"%ld",betMoney];
+            [self.MoneyDic setValue:betMoneyStr forKey:self.betArray[i]];//再赋值
+            self.sumTime +=[[self.MoneyDic objectForKey:self.betArray[i]] integerValue];
+            
+        }
+ 
+    [self.tableView reloadData];
+//    }
    // [button setBackgroundImage:[UIImage imageNamed:@"BetBox"]forState:UIControlStateNormal];
 
     
 }
-//点击梭哈
-//- (void)showHandClick:(UIButton *)sender{
-//    sender.selected= YES;
-//    
-//    
-//    UISlider *slider =[self.view viewWithTag:521];
-//    slider.value =1.0;
-//}
+
 //点击反选
 - (void)inverseClick:(UIButton *)sender{
     [self.MoneyDic removeAllObjects];
     [self.betArray removeAllObjects];
     [self.oddsArray removeAllObjects];
-    for (int i =0; i<28; i++) {
-        UIButton *button =[self.view viewWithTag:(i+1)*100];
+    NSInteger Tag = 0;
+    NSInteger money;
+    self.sum=0;
+    NSString *game;
+    UIButton *button;
+    
+    for (int i =0; i<self.Odds.count; i++) {
+        if (self.Odds.count == 5) {
+             button =[self.view viewWithTag:((i*2)+6)*100];
+             game =[NSString Game36:button.currentTitle];
+            NSLog(@"36游戏%@", game);
+        } else{
+             button =[self.view viewWithTag:(i+1)*100];
+            game =button.currentTitle;
+        }
+       
         if (!button.selected) {
-             NSLog(@"%@ %d",button.currentTitle, button.selected);
-            [self.betArray addObject:button.currentTitle];
-
+            NSLog(@"%@ %@",button.currentTitle, game);
+            [self.betArray addObject:game];
         }
     }
     for (int i =0 ; i <self.betArray.count; i++) {
-        NSInteger Tag =[self.betArray[i] integerValue] +121;
+        if (self.Odds.count == 11) {
+            Tag=([self.betArray[i] integerValue] - 2) +121;
+        } else if (self.Odds.count == 16){
+            Tag=([self.betArray[i] integerValue] - 3) +121;
+        } else if (self.Odds.count == 28){
+            Tag=[self.betArray[i] integerValue] +121;
+        }else if (self.Odds.count == 5){
+            Tag=[self.betArray[i] integerValue] +121;
+        }
+        
         UILabel *label =[self.view viewWithTag:Tag];
         NSString *string =label.text;
-        [self.oddsArray addObject:string];
-        
-    }
-    NSInteger money;
-    self.sum=0;
-    for (int i = 0; i<self.betArray.count; i++) {
-        money =1000 / [self.oddsArray[i] floatValue];
-        NSString *string =[NSString stringWithFormat:@"%ld",money];
-        [self.MoneyDic setObject:string forKey:self.betArray[i]];
-        [self.MoneyDic1 setObject:string forKey:self.betArray[i]];
-       
+        [self.oddsArray addObject:string];//赔率
+        money =(NSInteger)(1000 / [label.text floatValue]);//默认下注金额
+        [self.MoneyDic setObject:[NSString stringWithFormat:@"%ld",money] forKey:self.betArray[i]];
+        [self.MoneyDic1 setObject:[NSString stringWithFormat:@"%ld",money] forKey:self.betArray[i]];
         self.sum+=money; //总金额
-        
+
     }
+   
     
     self.sumTime =self.sum;
     self.times =0;
@@ -430,25 +529,55 @@
     [self.oddsArray removeAllObjects];
     NSDictionary *dic =Noti.userInfo;
     NSString *str =dic[@"ButtonName"];
+    if (self.Odds.count == 11) {
+        str = [NSString stringWithFormat:@"%ld",[str integerValue] +2];
+     
+    } else if (self.Odds.count == 16){
+        str = [NSString stringWithFormat:@"%ld",[str integerValue] +3];
+   
+    } else if(self.Odds.count == 5){
+        str = [NSString stringWithFormat:@"%ld",[str integerValue]];
+     
+        }
     [self.betArray addObject:str];
+    NSLog(@"数组%@,字典%@",self.betArray,self.Odds);
+    float odds;
+    
     for (int i =0 ; i <self.betArray.count; i++) {
-        NSInteger Tag =[self.betArray[i] integerValue] +121;
-        UILabel *label =[self.view viewWithTag:Tag];
-       // NSString *string =[label.text substringFromIndex:3];
-          NSString *string =label.text;
-         // NSLog(@"i=%d text =%@",i,string);
-        [self.oddsArray addObject:string];
+        
+        if (self.Odds.count == 11) {
+             odds =[self.Odds[[self.betArray[i] integerValue] -2] floatValue];
+        } else if (self.Odds.count == 16){
+             odds =[self.Odds[[self.betArray[i] integerValue] -3] floatValue];
+        } else if(self.Odds.count == 5){
+            odds =[self.Odds[([self.betArray[i] integerValue] -5)/2] floatValue];
+        } else{
+             odds =[self.Odds[[self.betArray[i] integerValue]] floatValue];
+        }
+       
+          NSString *string =[NSString stringWithFormat:@"%0.2f",odds];
+         [self.oddsArray addObject:string];
     }
     NSLog(@"选中号码%@",self.betArray);
     NSLog(@"赔率%@",self.oddsArray);
     NSInteger money;
     NSInteger number =[str integerValue];
-    UILabel *label =[self.view viewWithTag:(number +121)];
+    UILabel *label;
+    if (self.Odds.count == 11) {
+        label=[self.view viewWithTag:((number -2) +121)];
+    } else if (self.Odds.count == 16){
+       label =[self.view viewWithTag:((number -3) +121)];
+    } else if(self.Odds.count == 5){
+        label =[self.view viewWithTag:(number +121)]; 
+    } else{
+        label =[self.view viewWithTag:(number +121)];
+    }
+   
     money =1000 / [label.text floatValue];
     NSString *string =[NSString stringWithFormat:@"%ld",money];
     [self.MoneyDic setObject:string forKey:str];
      [self.MoneyDic1 setObject:string forKey:str];
-    NSLog(@"%@+++",self.MoneyDic1);
+    NSLog(@"%ld+++",(long)money);
     self.sum=0;
     for (int i = 0; i<self.betArray.count; i++) {
      
@@ -465,7 +594,7 @@
     
     [self.tableView reloadData];
     
-    
+    NSLog(@"%@",self.MoneyDic);
     
 
     
@@ -474,22 +603,42 @@
   //  [self.MoneyDic removeAllObjects];
     [self.oddsArray removeAllObjects];
     NSDictionary *dic =Noti.userInfo;
-    [self.betArray removeObject:dic[@"ButtonName"]];
-    for (int i =0 ; i <self.betArray.count; i++) {
-       
-        NSInteger Tag =[self.betArray[i] integerValue] +121;
-        UILabel *label =[self.view viewWithTag:Tag];
+    NSString *str= dic[@"ButtonName"];
+    if (self.Odds.count == 11) {
+        str = [NSString stringWithFormat:@"%ld",[str integerValue] +2];
+        
+    } else if (self.Odds.count == 16){
+        str = [NSString stringWithFormat:@"%ld",[str integerValue] +3];
+        
+    } else if(self.Odds.count == 5){
+        str = [NSString stringWithFormat:@"%ld",[str integerValue] ];
+        
+    }
+
+    [self.betArray removeObject:str];
     
-          NSString *string =label.text;
+    float odds;
+
+    for (int i =0 ; i <self.betArray.count; i++) {
+        
+        if (self.Odds.count == 11) {
+            odds =[self.Odds[[self.betArray[i] integerValue] -2] floatValue];
+        } else if (self.Odds.count == 16){
+            odds =[self.Odds[[self.betArray[i] integerValue] -3] floatValue];
+        } else if(self.Odds.count == 5){
+            odds =[self.Odds[([self.betArray[i] integerValue] -5)/2] floatValue];
+        } else{
+            odds =[self.Odds[[self.betArray[i] integerValue]] floatValue];
+        }
+        NSString *string =[NSString stringWithFormat:@"%0.2f",odds];
         [self.oddsArray addObject:string];
     }
     
-    [self.MoneyDic removeObjectForKey:dic[@"ButtonName"]];//移除金额
-     [self.MoneyDic1 removeObjectForKey:dic[@"ButtonName"]];
+     [self.MoneyDic removeObjectForKey:str];//移除金额
+     [self.MoneyDic1 removeObjectForKey:str];
     NSInteger money;
     self.sum=0;
     for (int i = 0; i<self.betArray.count; i++) {
-        
         money =[[self.MoneyDic1 objectForKey:self.betArray[i]] integerValue];
         self.sum+=money; //总金额
         
@@ -497,10 +646,8 @@
     self.sumTime =self.sum;
     self.times =0;
     self.Number =self.betArray.count;//注数
-//    self.MoneyDic1 =self.MoneyDic;
-    NSLog(@"字典%@ sum %ld",self.MoneyDic ,self.sum);
     
-     [self.tableView reloadData];
+     [self.tableView reloadData];//刷新数据
 }
 //默认样式
 - (void)popView:(UIButton *)sender{
@@ -508,28 +655,43 @@
    
     self.alertView =[[BetDefaultPopView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.alertView handleForBetType:^(NSMutableArray *BetArray, NSInteger BetName) {
-         NSLog(@"111111");
+         NSLog(@"%@",BetArray);
         [self.betArray removeAllObjects];
         [self.oddsArray removeAllObjects];
         [self.MoneyDic removeAllObjects];
-        for (int i =0 ; i <BetArray.count; i++) {
-            [self.betArray addObject:BetArray[i]];
-            NSInteger Tag =[self.betArray[i] integerValue] +121;
-            UILabel *label =[self.view viewWithTag:Tag];
-           // NSString *string =[label.text substringFromIndex:3];
-              NSString *string =label.text;
-            [self.oddsArray addObject:string];
-        }
+        NSString *str;
+        NSInteger Tag;
+        //float odds;
         NSInteger money;
         self.sum=0;
-        for (int i = 0; i<self.betArray.count; i++) {
-            money =1000 / [self.oddsArray[i] floatValue];
-            NSString *string =[NSString stringWithFormat:@"%ld",money];
-            [self.MoneyDic setObject:string forKey:self.betArray[i]];
-             [self.MoneyDic1 setObject:string forKey:self.betArray[i]];
+        for (int i =0 ; i <BetArray.count; i++) {
+          str =BetArray[i];
+          Tag = [str integerValue]+121;
+          
+            if (self.Odds.count == 11) {
+                str = [NSString stringWithFormat:@"%ld",[str integerValue] ];
+                Tag = ([str integerValue] -2)+121;
+
+            } else if (self.Odds.count == 16){
+                str = [NSString stringWithFormat:@"%ld",[str integerValue] ];
+                 Tag = ([str integerValue] -3)+121;
+
+            } else if(self.Odds.count == 5){
+                str = [NSString stringWithFormat:@"%ld",[str integerValue]*2 +1];
+                Tag = ([str integerValue] -2)+121; //----=-=-==-==-====-====
+
+            }
+            [self.betArray addObject:str]; //下注按钮
+            UILabel *label =[self.view viewWithTag:Tag];
+            NSString *string =label.text;
+            [self.oddsArray addObject:string];//赔率
+             money =(NSInteger)(1000 / [label.text floatValue]);//默认下注金额
+            [self.MoneyDic setObject:[NSString stringWithFormat:@"%ld",money] forKey:str];
+            [self.MoneyDic1 setObject:[NSString stringWithFormat:@"%ld",money] forKey:str];
             self.sum+=money; //总金额
             
         }
+
         self.sumTime =self.sum;
         self.times =0;
         self.Number =self.betArray.count;//注数
@@ -540,12 +702,38 @@
         
     }];
     [self.alertView.ChooseBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    NSString *odds =[NSString stringWithFormat:@"%ld",self.Odds.count];
+    NSNotificationCenter *center =[NSNotificationCenter defaultCenter];
+    [center postNotificationName:@"ModelDefaultPop" object:self userInfo:@{@"ModelDefaultPop":odds}];
     [self.alertView show];
     
 }
 //自定义样式
 - (void)popMyView:(UIButton *)sender{
     self.MyModelAleartView =[[JWMyModelPopView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [self.MyModelAleartView handleForBetType:^(NSMutableDictionary *BetDic ,NSMutableArray *BetArray) {
+        [self.betArray removeAllObjects];
+        [self.oddsArray removeAllObjects];
+        [self.MoneyDic removeAllObjects];
+        NSString *money;
+         self.sum=0;
+        for (int i = 0; i < BetArray.count; i++) {
+            [self.betArray addObject:BetArray[i]];
+            NSInteger Tag =[self.betArray[i] integerValue] +121;
+            UILabel *label =[self.view viewWithTag:Tag];
+            NSString *string =label.text;
+            [self.oddsArray addObject:string];
+        
+            money = [BetDic valueForKey:BetArray[i]] ;
+            [self.MoneyDic setObject:money forKey:self.betArray[i]];
+            [self.MoneyDic1 setObject:money forKey:self.betArray[i]];
+            self.sum += [money integerValue];
+        }
+         self.sumTime =self.sum;
+        self.Number =self.betArray.count;
+        [self.tableView reloadData];
+        
+    }];
     NSString *str =[NSString NmuberTogameType:self.title];
     NSNotificationCenter *center =[NSNotificationCenter defaultCenter];
     [center postNotificationName:@"ModelPop" object:self userInfo:@{@"ModelPop":str}];
@@ -565,7 +753,16 @@
     }
     
     else if (indexPath.section == 1){
-        return 450;
+        if (self.Odds.count ==5) {
+            return 250;
+        } else if (self.Odds.count == 11){
+            return 250;
+        }else if (self.Odds.count == 16){
+            return 315;
+        } else{
+              return 450;
+        }
+      
     }
     else if (indexPath.section == 3){
         return 44;

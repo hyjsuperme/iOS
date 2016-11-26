@@ -24,6 +24,7 @@
 /**10倍*/
 @property (weak, nonatomic) IBOutlet UIButton *FourBtn;
 
+@property (nonatomic, assign) NSInteger oddsCount;
 @property (nonatomic, strong) NSMutableDictionary *MoneyDic;
 +(instancetype)cellWithTableView:(UITableView *)tableView;
 

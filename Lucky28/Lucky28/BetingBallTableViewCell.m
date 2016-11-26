@@ -38,6 +38,7 @@
 //    }
 //    self.selectedBtn.selected =NO;
 //    self.selectedBtn =sender;
+    NSString *game;
     NSMutableString *string =[NSMutableString stringWithString:sender.currentTitle];
     [string deleteCharactersInRange:NSMakeRange(sender.currentTitle.length-1,1)];
     float odd = [string floatValue];
@@ -46,8 +47,13 @@
     if (money <1.0) {
         money =1;
     }
-        NSNotificationCenter *center =[NSNotificationCenter defaultCenter];
-        [center postNotificationName:@"BetMoney" object:self userInfo:@{@"Money":[NSString stringWithFormat:@"%ld",(NSInteger)money] ,@"Number":self.NumberBtn.currentTitle}];
+    if (self.oddsCount == 5) {
+        game =[NSString Game36:self.NumberBtn.currentTitle];
+    } else{
+        game =sender.currentTitle;
+    }
+    NSNotificationCenter *center =[NSNotificationCenter defaultCenter];
+    [center postNotificationName:@"BetMoney" object:self userInfo:@{@"Money":[NSString stringWithFormat:@"%ld",(NSInteger)money] ,@"Number":game}];
    
    
   

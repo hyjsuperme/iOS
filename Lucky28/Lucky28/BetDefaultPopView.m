@@ -12,6 +12,9 @@
 @property (nonatomic, strong) UIButton *selectBtn;
 @property (nonatomic, strong) NSArray *BtnContentArray;
 @property (nonatomic, strong) NSMutableArray * chooseBetArray;
+@property (nonatomic, assign) NSInteger oddCount;
+@property (nonatomic, assign) NSInteger MaxNumber;
+
 @end
 
 @implementation BetDefaultPopView
@@ -32,9 +35,11 @@
     _betName =betName;
   
 }
+
 - (instancetype)initWithFrame:(CGRect)frame{
     
     if (self =[super initWithFrame:frame]) {
+         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(ModelDefaultPop:) name:@"ModelDefaultPop" object:nil];//游戏类型
         self.windowLevel =UIWindowLevelAlert;
        
         //背景遮盖
@@ -82,10 +87,28 @@
     }
     return self;
 }
+- (void)ModelDefaultPop:(NSNotification *)Noti{
+    NSDictionary *dic =Noti.userInfo;
+    self.oddCount =[dic[@"ModelDefaultPop"] integerValue]; //游戏类型
+    
+}
 - (void)choose:(UIButton *)sender{
     [self.chooseBetArray removeAllObjects];
+    
+    
+    int j = 0;
+    if (self.oddCount == 11) {
+        j = 2;
+        self.MaxNumber =13;
+    } else if (self.oddCount == 16){
+        j = 3;
+        self.MaxNumber =19;
+    } else if (self.oddCount == 28){
+        j = 0;
+        self.MaxNumber =28;
+    }
     if ([sender.currentTitle isEqualToString:@"大"]) {
-        for (int i = 0; i <28; i++) {
+        for (int i = j; i <self.MaxNumber; i++) {
             if (i > 13) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
@@ -93,14 +116,14 @@
         }
         
     } else if ([sender.currentTitle isEqualToString:@"小"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i < 14) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
             
         }
     }else if ([sender.currentTitle isEqualToString:@"单"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             
             if (i%2 != 0) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
@@ -108,7 +131,7 @@
             
         }
     }else if ([sender.currentTitle isEqualToString:@"双"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             
             if (i%2 == 0) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
@@ -116,7 +139,7 @@
             
         }
     }else if ([sender.currentTitle isEqualToString:@"中"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             
             if (i < 18 && i >9) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
@@ -126,7 +149,7 @@
         
         
     }else if ([sender.currentTitle isEqualToString:@"边"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             
             if ((i<= 28 && i> 17) || (i<= 9 && i>= 0)) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
@@ -135,7 +158,7 @@
         }
         
     }else if ([sender.currentTitle isEqualToString:@"大单"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             
             if (i<= 28 && i> 17 && i%2!=0) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
@@ -143,7 +166,7 @@
             
         }
     }else if ([sender.currentTitle isEqualToString:@"小单"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             
             if (i<= 9 && i>= 0 && i%2!=0) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
@@ -151,7 +174,7 @@
             
         }
     }else if ([sender.currentTitle isEqualToString:@"大双"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             
             if (i<= 28 && i> 17 && i%2==0) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
@@ -159,7 +182,7 @@
             
         }
     }else if ([sender.currentTitle isEqualToString:@"小双"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             
             if (i<= 9 && i>= 0 && i%2==0) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
@@ -167,16 +190,16 @@
             
         }
     }else if ([sender.currentTitle isEqualToString:@"大边"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             
-            if (i<= 28 && i> 17) {
+            if (i<= self.MaxNumber && i> 17) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
             
         }
         
     }else if ([sender.currentTitle isEqualToString:@"小边"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             
             if ( i<= 9 && i>= 0) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
@@ -185,141 +208,141 @@
         }
         
     }else if ([sender.currentTitle isEqualToString:@"0尾"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%10 ==0) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"1尾"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%10 ==1) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"2尾"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%10 ==2) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"3尾"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%10 ==3) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"4尾"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%10 ==4) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"5尾"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%10 ==5) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"6尾"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%10 ==6) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"7尾"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%10 ==7) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"8尾"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%10 ==8) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"9尾"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%10 ==9) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"大尾"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%10 >=5) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
         
     }else if ([sender.currentTitle isEqualToString:@"3余0"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%3 ==0) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"3余1"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%3 ==1) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"3余2"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%3 ==2) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"4余0"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%4 ==0) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
         
     }else if ([sender.currentTitle isEqualToString:@"4余1"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%4 ==1) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"4余2"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%4 ==2) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"4余3"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%4 ==3) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"5余0"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%5 ==0) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"5余1"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%5 ==1) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"5余2"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%5 ==2) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"5余3"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%5 ==3) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
         }
     }else if ([sender.currentTitle isEqualToString:@"5余4"]){
-        for (int i = 0; i <28; i++) {
+        for (int i =j; i <self.MaxNumber; i++) {
             if (i%5 ==4) {
                 [self.chooseBetArray addObject: [NSString stringWithFormat:@"%d",i]];
             }
